@@ -76,7 +76,7 @@
             _settings.isAxshare = configuration.isAxshare;
             _settings.loadFeedbackPlugin = configuration.loadFeedbackPlugin;
             var cHash = getHashStringVar(SITEMAP_COLLAPSE_VAR_NAME);
-            _settings.startCollapsed = cHash == "1";
+            _settings.startCollapsed = cHash == "2";
             if(cHash == "2") closePlayer();
             var gHash = getHashStringVar(PLUGIN_VAR_NAME);
             if(gHash == "") gHash = 1;
