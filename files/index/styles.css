@@ -1754,7 +1754,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:41px;
+  width:61px;
   height:22px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -1768,26 +1768,28 @@
   font-style:normal;
   font-size:16px;
   color:#1E80F0;
+  text-align:left;
 }
 #u66 {
   border-width:0px;
   position:absolute;
   left:19px;
   top:99px;
-  width:41px;
+  width:61px;
   height:22px;
   font-family:'OpenSans-Semibold', 'Open Sans Semibold', 'Open Sans';
   font-weight:650;
   font-style:normal;
   font-size:16px;
   color:#1E80F0;
+  text-align:left;
 }
 #u66_text {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:41px;
+  width:61px;
   word-wrap:break-word;
 }
 #u67_div {
@@ -2090,7 +2092,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:74px;
+  width:110px;
   height:22px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -2111,7 +2113,7 @@
   position:absolute;
   left:80px;
   top:99px;
-  width:74px;
+  width:110px;
   height:22px;
   font-family:'OpenSans', 'Open Sans';
   font-weight:400;
@@ -2125,7 +2127,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:74px;
+  width:110px;
   word-wrap:break-word;
 }
 #u75 {
@@ -2173,7 +2175,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:154px;
+  width:359px;
   height:19px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -2194,7 +2196,7 @@
   position:absolute;
   left:19px;
   top:148px;
-  width:154px;
+  width:359px;
   height:19px;
   font-family:'OpenSans-Semibold', 'Open Sans Semibold', 'Open Sans';
   font-weight:650;
@@ -2208,7 +2210,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:154px;
+  width:359px;
   word-wrap:break-word;
 }
 #u78 {
@@ -2256,7 +2258,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:231px;
+  width:685px;
   height:19px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -2277,7 +2279,7 @@
   position:absolute;
   left:19px;
   top:562px;
-  width:231px;
+  width:685px;
   height:19px;
   font-family:'OpenSans-Semibold', 'Open Sans Semibold', 'Open Sans';
   font-weight:650;
@@ -2291,7 +2293,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:231px;
+  width:685px;
   word-wrap:break-word;
 }
 #u81 {
@@ -3574,14 +3576,14 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 }
 #u6.a {
   left:20px;
-  width:150px;
+  width:249px;
 }
 #u6_div.a {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:150px;
+  width:249px;
   height:19px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -3593,12 +3595,12 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 }
 #u6.a {
   left:20px;
-  width:150px;
+  width:249px;
 }
 #u6_text.a {
   left:0px;
   top:0px;
-  width:150px;
+  width:249px;
 }
 #u8.a {
   left:269px;
@@ -3722,13 +3724,14 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 }
 #u16.a {
   left:20px;
+  width:249px;
 }
 #u16_div.a {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:85px;
+  width:249px;
   height:19px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -3740,11 +3743,12 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 }
 #u16.a {
   left:20px;
+  width:249px;
 }
 #u16_text.a {
   left:0px;
   top:0px;
-  width:85px;
+  width:249px;
 }
 #u18.a {
   left:269px;
@@ -3922,13 +3926,14 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 }
 #u30.a {
   left:20px;
+  width:60px;
 }
 #u30_div.a {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:41px;
+  width:60px;
   height:22px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -3940,21 +3945,23 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 }
 #u30.a {
   left:20px;
+  width:60px;
 }
 #u30_text.a {
   left:0px;
   top:0px;
-  width:41px;
+  width:60px;
 }
 #u31.a {
   left:81px;
+  width:230px;
 }
 #u31_div.a {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:74px;
+  width:230px;
   height:22px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -3966,11 +3973,12 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 }
 #u31.a {
   left:81px;
+  width:230px;
 }
 #u31_text.a {
   left:0px;
   top:0px;
-  width:74px;
+  width:230px;
 }
 #u32.a {
   position:absolute;
@@ -4129,14 +4137,14 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u40.a {
 }
 #u41.a {
-  width:198px;
+  width:249px;
 }
 #u41_div.a {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:198px;
+  width:249px;
   height:19px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -4147,12 +4155,12 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   box-shadow:none;
 }
 #u41.a {
-  width:198px;
+  width:249px;
 }
 #u41_text.a {
   left:0px;
   top:0px;
-  width:198px;
+  width:249px;
 }
 #u43.a {
 }
@@ -4218,13 +4226,14 @@ body.a {  background-color:rgba(255, 255, 255, 1);
 #u48.a {
 }
 #u49.a {
+  width:249px;
 }
 #u49_div.a {
   border-width:0px;
   position:absolute;
   left:0px;
   top:0px;
-  width:127px;
+  width:249px;
   height:19px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -4235,11 +4244,12 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   box-shadow:none;
 }
 #u49.a {
+  width:249px;
 }
 #u49_text.a {
   left:0px;
   top:0px;
-  width:127px;
+  width:249px;
 }
 #u51.a {
 }
@@ -4479,7 +4489,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   position:absolute;
   left:0px;
   top:0px;
-  width:41px;
+  width:61px;
   height:22px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -4493,6 +4503,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   font-style:normal;
   font-size:16px;
   color:#1E80F0;
+  text-align:left;
 }
 #u66.a {
 }
@@ -4691,7 +4702,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   position:absolute;
   left:0px;
   top:0px;
-  width:74px;
+  width:110px;
   height:22px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -4737,7 +4748,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   position:absolute;
   left:0px;
   top:0px;
-  width:154px;
+  width:359px;
   height:19px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
@@ -4783,7 +4794,7 @@ body.a {  background-color:rgba(255, 255, 255, 1);
   position:absolute;
   left:0px;
   top:0px;
-  width:231px;
+  width:685px;
   height:19px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
