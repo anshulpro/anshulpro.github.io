@@ -6,8 +6,6 @@ details > div{
     animation-name: fadein;
     animation-duration: 300ms;
     animation-timing-function: ease-in-out;
-    border: 1px solid red; 
-    
 }
 @keyframes fadein{
     from {opacity: 0;}
@@ -15,5 +13,5 @@ details > div{
 }
 /*to hide details marker*/
 details summary::-webkit-details-marker{
-    display:none;
+/*    display:none;*/
 }
