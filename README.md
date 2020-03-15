@@ -4,6 +4,11 @@ This is my GitHub account readme.
 Anshul
 
 ---VERSION LOG---
+# Version v3
+
+Added Work Snippets with PDF and Design Files
+Added After Work Section
+Added Innovapptive to Work
 
 # Version v2
 Added process section to Work(3.1)
