@@ -1,0 +1,16 @@
+To do 
+1. Remove "joined on 25 Nov 2019"; add the years 
+2. Remove text selection; it's irritating at most places
+3. Consistency wrt Extenal Link: font-weight, icon needed or not; CTA text 
+4. Please complete the book notes; Link back them to the website
+5. New Design for Books card; more user friendly 
+6. Size or the header links are small; improve the design 
+7. Shift the Arduino Instructables and 5.1 channel HTS from articles to Random Cool Stuff
+
+
+Work Snippets :
+1. Have to prioritize and add one work from Wingify and one article
+
+Future Update 
+1. Accessibilty A+ pass
+2. Privacy and user control popup; More honesty towards viewer   
