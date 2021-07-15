@@ -1,0 +1,344 @@
+/* css here */
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+#inputBoxSection{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0px 0;
+    max-width: 760px;
+    width: 760px;
+    height: 328px;
+    z-index: 1;
+
+    background: #354044;
+    /* border: 1px solid #E0E0E0; */
+    box-sizing: border-box;
+    box-shadow: 0px 0px 4px rgba(140, 140, 140, 0.25);
+    border-radius: 8px;
+}
+#inputBox{
+    border: 1px solid #4F4F4F;
+    box-sizing: border-box;
+    /* min-width: 750px;
+    width: 750px;
+    max-width: 750px; */
+    width: auto;
+    height: auto;
+    margin: 25px;
+    box-sizing: border-box;
+    flex-grow: 1;
+
+    background: #fff;
+    box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 2px 4px rgba(118, 118, 118, 0.25);
+    border-radius: 4px;
+
+    /* pre-wrap helps in showing newline content in div: textBox */
+    white-space: pre-wrap;
+
+    /* min-height: 200px;
+    height: 200px;
+    max-height: 200px; */
+
+    overflow-y: auto;
+    font-size: 18px;
+    line-height: normal;
+    font-family: Noto Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #F06449;
+    padding: 8px;
+
+    /* disables text selection on string */
+    user-select: none;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;
+}
+
+label {
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: auto;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    color: #333333;
+
+    /* disables text selection on label */
+    user-select: none;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;
+}
+::placeholder{
+    font-family: sans-serif;
+    font-style: normal;
+    line-height: auto;
+
+    /* disables text selection on placeholder */
+    user-select: none;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;
+}
+
+#keyboardOuterFrame{
+    max-width: 774px;
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 4px rgba(140, 140, 140, 0.25), 0px 4px 4px rgba(164, 163, 163, 0.25);
+    border-radius: 9px;
+    padding: 8px 10px 11px 8px;
+}
+#keyboardInnerFrame{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-row-gap: 8px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.key{
+    width: 42px;
+    height: 42px;
+    background: #F2F2F2;
+    box-shadow: 1px 1px 0px 1px #CBCBCB;
+    border-radius: 4px;
+
+    font-family: Noto Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    box-sizing: border-box;
+    color: #333333;
+
+    /* disables text selection on keys */
+    user-select: none;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;
+      
+}
+.key-alt{
+    width: 42px;
+    height: 42px;
+    background: #F2F2F2;
+    box-shadow: 1px 1px 0px 1px #CBCBCB;
+    border-radius: 4px;
+
+    font-family: Noto Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    box-sizing: border-box;
+    color: #333333;
+
+    /* disables text selection on keys */
+    user-select: none;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;
+}
+.key-alt-active{
+    box-shadow: 0px 0px 0px 1px #999999;
+    cursor: pointer;
+}
+
+.key:hover, .key-hover{
+    box-shadow: 1px 1px 0px 1px #999999;
+    cursor: pointer;
+}
+.key:active, .key-active {
+    box-shadow: 0px 0px 0px 1px #999999;
+    cursor: grabbing;
+}
+
+.default{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 5px 4px 0;
+}
+.default2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.shiftkey{
+    display: flex;
+    padding: 6px 0 0 9px;
+    align-self: flex-start;
+    text-align: left;
+    font-size: 11px;
+    color: #4F4F4F;
+}
+.mainkey{
+    display: flex;
+    padding: 0 8px 6px 0;
+    align-self: flex-end;
+    text-align: right;
+}
+
+#row1{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr) 2fr;
+    grid-gap: 8px;
+}
+#delete{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 5px 4px 0;
+}
+
+#row2{
+    display: grid;
+    grid-template-columns: 1.5fr repeat(12, 1fr) 1.5fr;
+    grid-gap: 8px;
+}
+#tab{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 5px 4px 0;
+    width: 100%;
+}
+#backslash{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    box-sizing: border-box;
+    width: 100%;
+}
+#backslash>.shiftkey{
+    padding: 0px 0px 0px 8px;
+}
+#backquote > .mainkey{
+    padding: 0px 12px 0px 0px; 
+}
+
+#row3{
+    display: grid;
+    grid-template-columns: 2fr repeat(11, 1fr) 2fr;
+    grid-gap: 8px;
+}
+#returnkey{
+    width: 100%;
+}
+#capslockkey{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 5px 4px 0;
+    width: 100%;
+    position: relative;
+}
+#capsLockStatus{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    right: 5px;
+    top: 4px;
+    background-color: #fff;
+    flex: none;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+#row4{
+    display: grid;
+    grid-template-columns: 2.5fr repeat(10, 1fr) 2.5fr;
+    grid-gap: 8px;
+}
+#leftshiftkey, #rightshiftkey{
+    width: 100%;
+}
+
+#row5{
+    display: grid;
+    grid-template-columns: repeat(4,1fr) 6fr repeat(5,1fr);
+    grid-gap: 8px;
+}
+#spacekey{
+    width: 100%;
+}
+#halfkeyset{
+    width: 42px;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+#ArrowRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 0 4px 8px;
+}
+
+.arrowkey{
+    box-shadow: 1px 1px 0px 1px #CBCBCB;
+    background: #F2F2F2;
+    border-radius: 4px;
+    height: 17px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrowkey:hover, .arrowkey-hover{
+    box-shadow: 1px 1px 0px 1px #999999;
+    cursor: pointer;
+}
+.arrowkey:active, .arrowkey-active {
+    box-shadow: 0px 0px 0px 1px #999999;
+    cursor: grabbing;
+}
+
+/* Dummy caret on the textarea */
+#inputBox:after {
+    content: '|';
+    font-size: 18px;
+    display: inline-block;
+    align-self: flex-start;
+    animation: blink 1s infinite;
+    font-weight: bold;
+    color: #00BEF2;
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -4,8 +4,13 @@ This is my GitHub account readme.
 Anshul
 
 ---VERSION LOG---
-# Version v3
 
+# Version v4
+Added Sparkle favicon to the HTML 
+Under Books and Article : Added links for notes on few books, Aricle links 
+Under Random Stuff : Design changes on the component; added virtual keyboard code 
+
+# Version v3
 Added Work Snippets with PDF and Design Files
 Added After Work Section
 Added Innovapptive to Work

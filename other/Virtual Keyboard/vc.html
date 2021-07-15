@@ -1,0 +1,290 @@
+<!-- designed with love by Anshul Singh (twitter - @anshulpro) -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Virtual Keyboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="vc.css">
+        <script type="module" src="vc.js"></script>
+    </head>
+    <body> 
+        <section id="inputBoxSection">
+            <div id="inputBox" contenteditable="false" name="inputBox" rows="4" cols="50" >
+            </div>
+        </section>
+
+        <section style="align-self: center; margin-top: 0px; margin-bottom: -5px; z-index: 0;">
+            <svg width="23" height="39" viewBox="0 0 23 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0H23V2C23 2.55228 22.5523 3 22 3H1C0.447715 3 0 2.55228 0 2V0Z" fill="#FFA807"/>
+                <path d="M0 37C0 36.4477 0.447715 36 1 36H22C22.5523 36 23 36.4477 23 37V39H0V37Z" fill="#FFA807"/>
+                <path d="M3 3H19.5L17 11V30L19.5 36H11.25H3V30V20.5V11V3Z" fill="#A7483F"/>
+                <path d="M5 3V36" stroke="#FFE73D"/>
+                <path d="M7 3V36" stroke="#FFE73D"/>
+                <path d="M9 3V36" stroke="#FFE73D"/>
+                <path d="M11 3V36" stroke="#FFE73D"/>
+                <path d="M13 3V36" stroke="#FFE73D"/>
+                <path d="M16 36V34L15 30V10L16.5 4.5V3" stroke="#FFE73D"/>
+                <g style="mix-blend-mode:color-burn">
+                <path d="M2 35C2 34.4477 2.44772 34 3 34H19C19.5523 34 20 34.4477 20 35V36H2V35Z" fill="#926107"/>
+                </g>
+            </svg>
+        </section>
+        
+        <!-- keyboard-->
+        <section id="keyboardOuterFrame">
+            <div id="keyboardInnerFrame">
+                <section id="row1">
+                    <div class="key default2" id="backquote">
+                        <div class="shiftkey">~</div>
+                        <div class="mainkey">`</div>
+                    </div>
+                    <div class="key default2" id="1">
+                        <div class="shiftkey">!</div>
+                        <div class="mainkey">1</div>
+                    </div>
+                    <div class="key default2" id="2">
+                        <div class="shiftkey">@</div>
+                        <div class="mainkey">2</div>
+                    </div>
+                    <div class="key default2" id="3">
+                        <div class="shiftkey">#</div>
+                        <div class="mainkey">3</div>
+                    </div>
+                    <div class="key default2" id="4"> 
+                        <div class="shiftkey">$</div>
+                        <div class="mainkey">4</div>
+                    </div>
+                    <div class="key default2" id="5">
+                        <div class="shiftkey">%</div>
+                        <div class="mainkey">5</div>
+                    </div>
+                    <div class="key default2" id="6">
+                        <div class="shiftkey">^</div>
+                        <div class="mainkey">6</div>
+                    </div>
+                    <div class="key default2" id="7">
+                        <div class="shiftkey">&</div>
+                        <div class="mainkey">7</div>
+                    </div>
+                    <div class="key default2" id="8">
+                        <div class="shiftkey">*</div>
+                        <div class="mainkey">8</div>
+                    </div>
+                    <div class="key default2" id="9">
+                        <div class="shiftkey">(</div>
+                        <div class="mainkey">9</div>
+                    </div>
+                    <div class="key default2" id="0">
+                        <div class="shiftkey">)</div>
+                        <div class="mainkey">0</div>
+                    </div>
+                    <div class="key default2" id="subtract">
+                        <div class="shiftkey">_</div>
+                        <div class="mainkey">-</div>
+                    </div>
+                    <div class="key default2" id="equal">
+                        <div class="shiftkey">+</div>
+                        <div class="mainkey">=</div>
+                    </div>
+                    <div class="key" id="delete">
+                        <div>delete</div>
+                    </div>
+                </section>
+
+                <section id="row2">
+                    <div class="key" id="tab">
+                        <div>tab</div>
+                    </div>
+                    <div class="key default" id="Q">
+                        <div>Q</div>
+                    </div>
+                    <div class="key default" id="W">
+                        <div>W</div>
+                    </div>
+                    <div class="key default" id="E">
+                        <div>E</div>
+                    </div>
+                    <div class="key default" id="R">
+                        <div>R</div>
+                    </div>
+                    <div class="key default" id="T">
+                        <div>T</div>
+                    </div>
+                    <div class="key default" id="Y">
+                        <div>Y</div>
+                    </div>
+                    <div class="key default" id="U">
+                        <div>U</div>
+                    </div>
+                    <div class="key default" id="I">
+                        <div>I</div>
+                    </div>
+                    <div class="key default" id="O">
+                        <div>O</div>
+                    </div>
+                    <div class="key default" id="P">
+                        <div>P</div>
+                    </div>
+                    <div class="key default2" id="openingbracket">
+                        <div class="shiftkey">{</div>
+                        <div class="mainkey">[</div>
+                    </div>
+                    <div class="key default2" id="closingbracket">
+                        <div class="shiftkey">}</div>
+                        <div class="mainkey">]</div>
+                    </div>
+                    <div class="key default2" id="backslash">
+                        <div class="shiftkey">|</div>
+                        <div class="mainkey">\</div>
+                    </div>
+                </section>
+
+                <section id="row3">
+                    <div class="key" id="capslockkey">
+                        <div>caps lock</div>
+                        <div id="capsLockStatus"></div>
+                    </div>
+                    <div class="key default" id="A">
+                        <div>A</div>
+                    </div>
+                    <div class="key default" id="S">
+                        <div>S</div>
+                    </div>
+                    <div class="key default" id="D">
+                        <div>D</div>
+                    </div>
+                    <div class="key default" id="F">
+                        <div>F</div>
+                    </div>
+                    <div class="key default" id="G">
+                        <div>G</div>
+                    </div>
+                    <div class="key default" id="H">
+                        <div>H</div>
+                    </div>
+                    <div class="key default" id="J">
+                        <div>J</div>
+                    </div>
+                    <div class="key default" id="K">
+                        <div>K</div>
+                    </div>
+                    <div class="key default" id="L">
+                        <div>L</div>
+                    </div>
+                    <div class="key default2" id="semicolon">
+                        <div class="shiftkey">:</div>
+                        <div class="mainkey">;</div>
+                    </div>
+                    <div class="key default2" id="singlequote">
+                        <div class="shiftkey">"</div>
+                        <div class="mainkey">'</div>
+                    </div>
+                    <div class="key default" id="returnkey">
+                        <div>return</div>
+                    </div>
+                </section>
+
+                <section id="row4">
+                    <div class="default key" id="leftshiftkey">
+                        <div>shift</div>
+                    </div>
+                    <div class="key default" id="Z">
+                        <div>Z</div>
+                    </div>
+                    <div class="key default" id="X">
+                        <div>X</div>
+                    </div>
+                    <div class="key default" id="C">
+                        <div>C</div>
+                    </div>
+                    <div class="key default" id="V">
+                        <div>V</div>
+                    </div>
+                    <div class="key default" id="B">
+                        <div>B</div>
+                    </div>
+                    <div class="key default" id="N">
+                        <div>N</div>
+                    </div>
+                    <div class="key default" id="M">
+                        <div>M</div>
+                    </div>
+                    <div class="key default2" id="comma">
+                        <div class="shiftkey"><</div>
+                        <div class="mainkey">,</div>
+                    </div>
+                    <div class="key default2" id="fullstop">
+                        <div class="shiftkey">></div>
+                        <div class="mainkey">.</div>
+                    </div>
+                    <div class="key default2" id="slash">
+                        <div class="shiftkey">?</div>
+                        <div class="mainkey">/</div>
+                    </div>
+                    <div class="default key" id="rightshiftkey">
+                        <div>shift</div>
+                    </div>
+                </section>
+
+                <section id="row5">
+                    <div class="key default">
+                        <div>fn</div>
+                    </div>
+                    <div class="key default" id="ControlLeft">
+                        <div>ctrl</div>
+                    </div>
+                    <div class="key default" id="AltLeft">
+                        <div>alt</div>
+                    </div>
+                    <div class="key default" id="MetaLeft">
+                        <div>cmd</div>
+                    </div>
+                    <div class="key default" id="spacekey">
+                        <div></div>
+                    </div>
+                    <div class="key default" id="MetaRight"> 
+                        <div>cmd</div>
+                    </div>
+                    <div class="key default" id="AltRight">
+                        <div>alt</div>
+                    </div>
+
+                    <div class="key default" id="ArrowLeft">
+                        <div>
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.64889 0.530275C5.51389 0.473035 5.35759 0.498235 5.24926 0.595075L0.61963 4.73506C0.543333 4.80328 0.5 4.89922 0.5 5.00002C0.5 5.10082 0.543333 5.19676 0.61963 5.26498L5.24926 9.40496C5.31889 9.46724 5.40889 9.5 5.5 9.5C5.55019 9.5 5.60093 9.4901 5.64889 9.46976C5.78333 9.41234 5.87037 9.28292 5.87037 9.14L5.87037 6.62001L10.1296 6.62001C10.3341 6.62001 10.5 6.45873 10.5 6.26001L10.5 3.74002C10.5 3.5413 10.3341 3.38002 10.1296 3.38002L5.87037 3.38002L5.87037 0.860034C5.87037 0.717115 5.78333 0.587695 5.64889 0.530275Z" fill="#828282"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="halfkeyset">
+                        <div id="ArrowUp" class="arrowkey">
+                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.96972 5.14889C9.02696 5.01389 9.00176 4.85759 8.90492 4.74926L4.76494 0.119629C4.69672 0.0433331 4.60078 -1.92296e-07 4.49998 -1.96702e-07C4.39918 -2.01108e-07 4.30324 0.0433331 4.23502 0.119629L0.0950392 4.74926C0.0327595 4.81889 -2.14574e-07 4.90889 -2.18557e-07 5C-2.20751e-07 5.05018 0.00989892 5.10093 0.0302389 5.14889C0.0876587 5.28333 0.217079 5.37037 0.359998 5.37037L2.87999 5.37037L2.87999 9.62963C2.87999 9.83407 3.04127 10 3.23999 10L5.75998 10C5.9587 10 6.11998 9.83407 6.11998 9.62963L6.11998 5.37037L8.63997 5.37037C8.78289 5.37037 8.9123 5.28333 8.96972 5.14889Z" fill="#828282"/>
+                            </svg> 
+                        </div>
+                        <div id="ArrowDown" class="arrowkey">
+                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.0302752 4.85111C-0.0269645 4.98611 -0.00176454 5.14241 0.0950751 5.25074L4.23506 9.88037C4.30328 9.95667 4.39922 10 4.50002 10C4.60082 10 4.69676 9.95667 4.76498 9.88037L8.90496 5.25074C8.96724 5.18111 9 5.09111 9 5C9 4.94981 8.9901 4.89907 8.96976 4.85111C8.91234 4.71667 8.78292 4.62963 8.64 4.62963L6.12001 4.62963L6.12001 0.370371C6.12001 0.165926 5.95873 7.10572e-08 5.76001 6.86875e-08L3.24002 3.86369e-08C3.0413 3.62672e-08 2.88002 0.165926 2.88002 0.370371L2.88002 4.62963L0.360034 4.62963C0.217115 4.62963 0.087695 4.71667 0.0302752 4.85111Z" fill="#828282"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="key default" id="ArrowRight">
+                        <div>
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.35111 9.46972C5.48611 9.52696 5.64241 9.50176 5.75074 9.40492L10.3804 5.26494C10.4567 5.19672 10.5 5.10078 10.5 4.99998C10.5 4.89918 10.4567 4.80324 10.3804 4.73502L5.75074 0.595039C5.68111 0.532759 5.59111 0.5 5.5 0.5C5.44982 0.5 5.39907 0.509899 5.35111 0.530239C5.21667 0.587658 5.12963 0.717079 5.12963 0.859998L5.12963 3.37999L0.870371 3.37999C0.665927 3.37999 0.500001 3.54127 0.500001 3.73999L0.5 6.25998C0.5 6.4587 0.665926 6.61998 0.870371 6.61998L5.12963 6.61998L5.12963 9.13997C5.12963 9.28288 5.21667 9.4123 5.35111 9.46972Z" fill="#828282"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </section>
+        
+    </body>
+</html>
