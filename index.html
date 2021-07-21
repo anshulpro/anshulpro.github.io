@@ -29,19 +29,19 @@
                 if(temp == "work_container")
                 {
                     document.getElementById("work_container").style.display = "block";
-                    document.getElementById("work_tab").classList = "cursor-pointer text-red-700 font-black border-red-700 border-b-4 mx-1 px-3";
+                    document.getElementById("work_tab").classList = "cursor-pointer text-red-700 font-bold border-red-700 border-b-4 mx-1 px-3";
                     
                     document.getElementById("after_work_container").style.display = "none";
-                    document.getElementById("after_work_tab").classList = "cursor-pointer text-gray-600 font-hairline mx-1 px-3"; 
+                    document.getElementById("after_work_tab").classList = "cursor-pointer text-gray-600 font-normal mx-1 px-3"; 
                     
                 }
                 else if(temp == "after_work_container")
                 {
                     document.getElementById("after_work_container").style.display = "block";
-                    document.getElementById("after_work_tab").classList = "cursor-pointer text-red-700 font-black border-red-700 border-b-4 mx-1 px-3";
+                    document.getElementById("after_work_tab").classList = "cursor-pointer text-red-700 font-bold border-red-700 border-b-4 mx-1 px-3";
                     
                     document.getElementById("work_container").style.display = "none";
-                    document.getElementById("work_tab").classList = "cursor-pointer text-gray-600 font-hairline mx-1 px-3";
+                    document.getElementById("work_tab").classList = "cursor-pointer text-gray-600 font-normal mx-1 px-3";
                 }
             }
         </script> 
@@ -57,7 +57,7 @@
 
     </head>
    
-    <body> 
+    <body class="disable-select"> 
         <header class="flex flex-row justify-between bg-gray-200 w-full p-3 shadow">
             <div class="font-mono text-gray-700 text-md text-left">Anshul Singh</div>
             
@@ -91,8 +91,8 @@
         
         <!--Navigation tab-->
         <section class="flex flex-row ml-2">
-            <div id="work_tab" class="cursor-pointer text-red-700 font-black border-red-700 border-b-4 mx-1 px-3" onclick="make_tab_active('work_container')"> Work</div>
-            <div id="after_work_tab" class="cursor-pointer text-gray-600 font-hairline mx-1 px-3" onclick="make_tab_active('after_work_container')">After Work</div>
+            <div id="work_tab" class="cursor-pointer text-red-700 font-bold border-red-700 border-b-4 mx-1 px-3" onclick="make_tab_active('work_container')"> Work</div>
+            <div id="after_work_tab" class="cursor-pointer text-gray-600 font-normal mx-1 px-3" onclick="make_tab_active('after_work_container')">After Work</div>
         </section>
     
         <!--separator--> 
@@ -132,15 +132,14 @@
         
          <!--WORK at Innovapptive-->
         <details class="mt-4"> 
-            <summary class="text-sm mx-3 cursor-pointer text-blue-500">Work at Innovapptive<em> (joined on 25 Nov 2019)</em></summary>
+            <summary class="text-sm mx-3 cursor-pointer text-blue-500">Work at Innovapptive<em> (1.2 Years)</em></summary>
             <div class="mx-3 bg-gray-100 p-2 rounded">
                 <div class="text-xs text-gray-800 ">
                     <ul class="list-disc ml-4">
                         <li>Primary work includes adding design for Release Enablement (Each product has a 3 months release cycle, 1 release is divided into 6 sprints (S1-S6), each design sprints incluse issues that need-UX are closed 2 sprints before devlopement sprints)
-                        </li><br>
+                        </li>
                         <li><ul class="list-decimal">Secondary work include :
                             <li class="ml-4">Conducting a UI Audit on an application <br><a target="_blank" class="text-blue-500" href="https://link.medium.com/yk1VO8WJQ4">How to conduct a UI Audit - Medium Article</a></li> 
-                            <li class="ml-4">Setting guidelines for a single font-icon respository (.ttf/.otf/.eot) - all products and platforms (iOS + android + Windows + UI5) <br><a class="text-blue-500" href="#">Create a font-file using figma + fontlab  - Medium Article (In Progress)</a></li>
                             <li class="ml-4">Design system setup in figma (Phase 1) (Text styles, Color styles, Shadows) </li>
                         </ul></li>
                         <div class="flex flex-none flex-wrap justify-start">
@@ -627,12 +626,12 @@
                 </div>
                     <ul class="text-xs text-gray-800 font-semibold">
                         <li>Principles by Ray Dalio<a class="text-blue-500 ml-1 font-normal" href="https://docs.google.com/document/d/1eEBhYlCkMyzxvtZq8j9ve8iu35m36be7fmmbupQlkq0/edit?usp=sharing">View Notes<span><img class="h-3 w-3 ml-1 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
-                        <li><a href="#">Zero to One by Peter Thiel</a></li>
-                        <li><a href="#">The Almanack of Naval Ravikant by Eric Jorgenson</a></li>
-                        <li><a href="#">Deep Work by Cal Newport</a></li>
-                        <li><a href="#">Factfulness by Hans Rosling</a></li>
-                        <li><a href="#">The take-off and other true stories by indian cyclists by Cyclop</a></li>
-                        <li><a href="#">Atomic Habits by James Clear</a></li>
+                        <li>Zero to One by Peter Thiel<a href="#"></a></li>
+                        <li>The Almanack of Naval Ravikant by Eric Jorgenson<a href="#"></a></li>
+                        <li>Deep Work by Cal Newport<a href="#"></a></li>
+                        <li>Factfulness by Hans Rosling<a href="#"></a></li>
+                        <li>The take-off and other true stories by indian cyclists by Cyclop<a href="#"></a></li>
+                        <li>Atomic Habits by James Clear<a href="#"></a></li>
                     </ul>
             </div>
 
@@ -644,7 +643,7 @@
                         <a target="_blank" class="ml-2 text-blue-500" href="https://www.notion.so/anshulpro/Virtual-Keyboard-59445b309db04668993710d0b5abd925">View Details<span><img class="h-3 w-3 ml-1 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a>
                     </div>
 
-                    <div class="text-xs text-gray-800 font-normal">My wife challenged to make a calculator using vanilla-JS. Did it.
+                    <div class="text-xs text-gray-800 font-normal">A simple numeric calculator using vanilla JS (My wife challenged me. Did it).
                         <a target="_blank" class="ml-1 text-blue-500" href="/other/Calculator/calculator_v1.html">View Demo<span><img class="h-3 w-3 ml-1 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a> 
                         <a target="_blank" class="ml-2 text-blue-500" href="/other/Calculator/Design.pdf">View Design File<span><img class="h-3 w-3 ml-1 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a>
                     </div>

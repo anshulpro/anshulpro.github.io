@@ -1,16 +1,24 @@
 To do 
-1. Remove "joined on 25 Nov 2019"; add the years 
-2. Remove text selection; it's irritating at most places
+
 3. Consistency wrt Extenal Link: font-weight, icon needed or not; CTA text 
 4. Please complete the book notes; Link back them to the website
 5. New Design for Books card; more user friendly 
 6. Size or the header links are small; improve the design 
 7. Shift the Arduino Instructables and 5.1 channel HTS from articles to Random Cool Stuff
-
+8. When the vertical content increases leading to scroll; the scrollbar adds a small jump of pixels; make header sticky or redesign
 
 Work Snippets :
 1. Have to prioritize and add one work from Wingify and one article
 
 Future Update 
-1. Accessibilty A+ pass
-2. Privacy and user control popup; More honesty towards viewer   
+1. Stive for Accessibilty Level AAA 
+2. Privacy and user control popup; Design that also; More honesty towards viewer   
+
+-------------
+21-july-21 :
+Remove "joined on 25 Nov 2019"; add the years - Done
+Remove text selection; it's irritating at most places - Done; added a class "disable-select" on the <body>
+Under books the book name were coming as anchor tag links; now removed
+Change the text of calculator; was looking quite cheezy
+"After work" font weight was quite less; poor readability; replaced the font-hairline to font-normal and font-black to font-bold
+Removed incomplete secondary work frok Innovapptive list "create a font-file using figma + fontlab - medium article" 
