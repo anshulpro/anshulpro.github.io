@@ -8,43 +8,24 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Anshul Singh</title>
-        <meta name="description" content="portfolio website">
+        <meta name="description" content="Personal Website">
         <link rel="stylesheet" href="portfolio.css">
         <link href="design.min.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <!-- Favicon code -->
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
         <link rel="manifest" href="/images/favicon/site.webmanifest">
 
-        <style>
-        </style>
-        
-        <script> 
-            
-        //function for a header tab to make active... 
-        function make_tab_active(temp)
-            {
-                if(temp == "work_container")
-                {
-                    document.getElementById("work_container").style.display = "block";
-                    document.getElementById("work_tab").classList = "cursor-pointer text-red-700 font-bold border-red-700 border-b-4 mx-1 px-3";
-                    
-                    document.getElementById("after_work_container").style.display = "none";
-                    document.getElementById("after_work_tab").classList = "cursor-pointer text-gray-600 font-normal mx-1 px-3"; 
-                    
-                }
-                else if(temp == "after_work_container")
-                {
-                    document.getElementById("after_work_container").style.display = "block";
-                    document.getElementById("after_work_tab").classList = "cursor-pointer text-red-700 font-bold border-red-700 border-b-4 mx-1 px-3";
-                    
-                    document.getElementById("work_container").style.display = "none";
-                    document.getElementById("work_tab").classList = "cursor-pointer text-gray-600 font-normal mx-1 px-3";
-                }
-            }
-        </script> 
+        <!-- google font files -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+
+        <!-- JS file for scripting -->
+        <script src="logic.js"></script>
         
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140131807-1"></script>
@@ -54,11 +35,11 @@
             gtag('js', new Date());
             gtag('config', 'UA-140131807-1');
         </script>
-
     </head>
    
-    <body class="disable-select"> 
-        <header class="flex flex-row justify-between bg-gray-200 w-full p-3 shadow">
+    <body class="disable-select flex flex-col"> 
+        <!--Top Header-->
+        <!-- <header class="flex flex-row justify-between bg-gray-200 w-full p-3 shadow">
             <div class="font-mono text-gray-700 text-md text-left">Anshul Singh</div>
             
             <div class="flex font-mono text-xs uppercase items-center text-indigo-800 tracking-widest">Good design is Careful</div>
@@ -67,18 +48,17 @@
                 <a target="_blank" href="https://www.linkedin.com/in/anshulpro/"><img class="h-4 mx-2 cursor-pointer" src="assets/linkedin.png"></a>
                 <a target="_blank" href="https://twitter.com/anshulpro"><img class="h-4 mx-2" src="assets/twitter.png"></a>
                 <a target="_blank" href="https://www.facebook.com/anshulpro"><img class="h-4 mx-2" src="assets/facebook.png"></a>
-                
             </div>
-        </header>
+        </header> -->
         
         <!--Introduction-->
-        <section class="flex flex-row p-3 font-normal font-sans text-gray-800 mt-3 max-w-xl mx-auto">
+        <section class="flex flex-row p-3 font-normal font-text text-gray-800 mt-6 max-w-xl mx-5 self-center">
             <div class="flex-none w-24">
                 <img class="rounded-sm" src="assets/profile_pic.jpg">
             </div>
             <div class="flex flex-col text-sm ml-3 leading-none">
                 <div class="font-bold text-4xl text-gray-800 tracking-wide">Hi !</div>
-                <div class="font-regular text-xs text-gray-600 mt-2">Welcome to my webpage :-)</div>
+                <div class="font-regular text-xs text-gray-600 mt-2">My name is Anshul Singh and welcome to my webpage :-)</div>
                 <div class="font-regular text-xs mt-2 text-gray-600 leading-tight">I currently work as a Senior Product Designer at <a target="_blank" class="text-blue-500" href="https://wingify.com/">Wingify</a> (Remote)
                     <br>Worked at
                     <a target="_blank" class="text-blue-500" href="https://www.innovapptive.com/">Innovapptive</a>, 
@@ -89,527 +69,90 @@
             </div>
         </section>
         
-        <!--Navigation tab-->
-        <section class="flex flex-row ml-2">
-            <div id="work_tab" class="cursor-pointer text-red-700 font-bold border-red-700 border-b-4 mx-1 px-3" onclick="make_tab_active('work_container')"> Work</div>
-            <div id="after_work_tab" class="cursor-pointer text-gray-600 font-normal mx-1 px-3" onclick="make_tab_active('after_work_container')">After Work</div>
-        </section>
-    
+        <!--Navigation switch-->
+        <div id="nav_parent">
+            <div id="work_tab" class="tab_active" onclick="make_tab_active('work_tab')">
+                <img src="/images/badge_24px.png">
+                Work
+            </div>
+            <div id="afterwork_tab" class="tab_inactive" onclick="make_tab_active('afterwork_tab')">
+                <img src="/images/toy_train_24px.png">
+                After Work
+            </div>
+        </div>
+
         <!--separator--> 
-        <div class="h-px bg-gray-200"></div>
+        <!-- <div class="h-px bg-gray-200"></div> -->
         
         
         <!--Work File-->
-        <div id="work_container" style="display: block;">
-        
-        <div class="text-gray-800 text-sm font-semibold mx-2 p-2 mt-2">Few Work snippets:</div>
-        <div class="mx-3 bg-gray-100 p-2 rounded mb-1">
-            <div class="text-gray-800 text-sm">
-                <ul class="list-disc ml-4 text-xs font-normal">
-                    <li><div class="font-semibold">Assign Crew Members to a Work Order - Web app | Dekstop <a target="_blank" class="text-blue-500 pl-2" href="/documents/Assign%20Crew%20Members%20to%20WO%20-%20Anshul%20Singh.pdf">
-                        View PDF<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
-                        </a>
-                        </div>A Supervisor assigns a technician for each operation in a Work Order that is already created. Before proposing such a design it was done from the default SAP application (the backend). Design aimed to improve supervisor productivity, reduce error in assignment and easy to use. 
-                    </li>
+        <div id="work_container" class="flex-col items-center" style="display: flex;">
+
+            <!-- New card design - d1 -->
+            <div class="card_d1 mt-4 glass_container">
+                <div class="flex flex-col">
+                    <div class="card_heading_d1">Technician - A day at work</div>
+                    <div class="card_content_d1">One of the user journey for a Technician that shows how his typical day might look like. He manages all his work (the work orders assigned to him) via a digital tablet.</div>
+                    <a class="mt-auto mr-auto card_button_d1" target="_blank" rel="noopener noreferrer" href="/documents/User Journey - Technician.pdf">View Design </a>
+                </div>
+                <div class="card_image_d1">
+                    <img src="/images/technician_thumbnail_1.jpg">
+                </div>
+            </div>
+
+            <!-- New card design - d2 -->
+            <div class="card_d2 mt-4">
+                <div class="flex flex-col">
+                    <div class="card_heading_d2">Email Template - Pre & Post Health Check</div>
+                    <div class="card_content_d2">This email template was used by the backend developer; code triggers these emails along with notifications to users based on Health Check stages.</div>
+                    <div class="flex flex-row mt-auto mr-auto">
+                        <a class="card_button_d2 mr-3" target="_blank" rel="noopener noreferrer" href="https://www.figma.com/file/MGdmxMxaJiwRLvHV2NPERJhq/Book-Appointment-Mailer?node-id=0%3A1">View Design</a>
+                        <a class="card_button_d2" target="_blank" rel="noopener noreferrer" href="https://htmlpreview.github.io/?https://github.com/anshulpro/Health-Check-Template/blob/master/html_mailer_health_check_2.html">View Code Preview</a>
+                    </div>
+                </div>
+                <div class="card_image_d2">
+                    <img src="/images/Email_thumbnail_1.jpg">
+                </div>
+            </div>
+
+            <!-- New card design - d3 -->
+            <div class="card_d3 mt-4 glass_container">
+                <div class="flex flex-col">
+                    <div class="card_heading_d3">Service request tracker - Mobile app</div>
+                    <div class="card_content_d3">Water purifier owners can manage (raise, track, close) service requests; also cross-selling other products manufactured by the company - Demo Assignment (2 days)</div>
+                    <a class="mt-auto mr-auto card_button_d3" target="_blank" rel="noopener noreferrer" href="/documents/Water Purifier - Anshul Singh.pdf">View Design </a>
+                </div>
+                <div class="card_image_d3">
+                    <!-- <img src="/images/mobile_app_thumbnail_1.jpg"> -->
+                </div>
+            </div>
+
+            <!-- Old Works card -->
+            <div id= "old_works" class="mb-1 mt-4 mb-4">
+                <div id="old_work_heading" class="text-gray-700 mb-2">Few old work compilation : </div>
+                <div id="old_work_container" class="text-gray-700">
+                    <ul class="list-disc ml-4">
+                        <li><div class="font-semibold">Assign Crew Members to a Work Order - Web app | Dekstop <a target="_blank" class="text-blue-500 pl-2" href="/documents/Assign%20Crew%20Members%20to%20WO%20-%20Anshul%20Singh.pdf">
+                            View PDF<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
+                            </a>
+                            </div>A Supervisor assigns a technician for each operation in a Work Order that is already created. Before proposing such a design it was done from the default SAP application (the backend). Design aimed to improve supervisor productivity, reduce error in assignment and easy to use. 
+                        </li> 
+                        <li><div class="font-semibold mt-2">Pharmacy Portal for Inventory management<a target="_blank" class="text-blue-500 pl-2" href="https://4yzerr.axshare.com/#g=1&p=login_page">View Prototype
+                            <span><img class="h-3 w-3 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span>
+                        </a></div>In-house Pharamcy web-app prototype for inventory management of medicines</li>
                         
-                    <li><div class="font-semibold mt-2">Designing Communication Mailers for Pre and Post Health Check <a target="_blank" class="text-blue-500 px-2" href="https://www.figma.com/file/MGdmxMxaJiwRLvHV2NPERJhq/Book-Appointment-Mailer?node-id=0%3A1">View Design File
-                        <span><img class="h-3 w-3 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a> 
-                    <a target="_blank" class="text-blue-500" href="https://htmlpreview.github.io/?https://github.com/anshulpro/Health-Check-Template/blob/master/html_mailer_health_check_2.html">View HTML Template
-                        <span><img class="h-3 w-3 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></div>Collaborated with Marketing, Support and Tech team to design email templates that would be triggered by system. Best part was they allowed me to code the Template using simple HTML-table.</li>
-                    
-                    <li><div class="font-semibold mt-2">Pharmacy Portal for Inventory management<a target="_blank" class="text-blue-500 pl-2" href="https://4yzerr.axshare.com/#g=1&p=login_page">View Prototype
-                        <span><img class="h-3 w-3 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span>
-                    </a></div>In-house Pharamcy web-app prototype for inventory management of medicines</li>
-                    
-                    <li><div class="font-semibold mt-2">Tracking of service requests by the water purifier owner - Mobile app (Demo Assignment) <a target="_blank" class="text-blue-500 pl-2" href="/documents/Water%20Purifier%20-%20Anshul%20Singh.pdf">View PDF
-                        <span><img class="h-3 w-3 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></div>A mobile app to reduce the calls for support for the water purifier, promote other products and offerings and get feedback. (~ 2 days) </li>
-                    
-                    <li><div class="font-semibold mt-2">UX Assignment for PolicyBazzar (UX Assignment) <a target="_blank" class="text-blue-500 pl-2" href="/documents/PolicyBazzar-%20Anshul%20Singh.pdf">View PDF
-                        <span><img class="h-3 w-3 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></div>My take on how people can understand "Zero Comission Investment" for PolicyBazzar. (~ 1 day) </li>
-                </ul>
-            </div>
-        </div>
-        
-         <!--WORK at Innovapptive-->
-        <details class="mt-4"> 
-            <summary class="text-sm mx-3 cursor-pointer text-blue-500">Work at Innovapptive<em> (1.2 Years)</em></summary>
-            <div class="mx-3 bg-gray-100 p-2 rounded">
-                <div class="text-xs text-gray-800 ">
-                    <ul class="list-disc ml-4">
-                        <li>Primary work includes adding design for Release Enablement (Each product has a 3 months release cycle, 1 release is divided into 6 sprints (S1-S6), each design sprints incluse issues that need-UX are closed 2 sprints before devlopement sprints)
-                        </li>
-                        <li><ul class="list-decimal">Secondary work include :
-                            <li class="ml-4">Conducting a UI Audit on an application <br><a target="_blank" class="text-blue-500" href="https://link.medium.com/yk1VO8WJQ4">How to conduct a UI Audit - Medium Article</a></li> 
-                            <li class="ml-4">Design system setup in figma (Phase 1) (Text styles, Color styles, Shadows) </li>
-                        </ul></li>
-                        <div class="flex flex-none flex-wrap justify-start">
-                            
-                        </div>
-                        
+                        <li><div class="font-semibold mt-2">UX Assignment for PolicyBazzar (UX Assignment) <a target="_blank" class="text-blue-500 pl-2" href="/documents/PolicyBazzar-%20Anshul%20Singh.pdf">View PDF
+                            <span><img class="h-3 w-3 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></div>My take on how people can understand "Zero Comission Investment" for PolicyBazzar. (~ 1 day) </li>
                     </ul>
                 </div>
             </div>
-        </details>
-        
-        <!--WORK at ekincare-->
-        <details class="mt-2 mb-2">
-            <summary class="text-sm mx-3 cursor-pointer text-blue-500">Work at ekincare <em>(2 Years)</em></summary>
-            <div class="mx-3 bg-gray-100 p-2 rounded">
-
-                <!--process (product) - not_mobile-->
-                <div class="hidden sm:flex flex-col items-center mb-8">
-                <!--Header-->
-                <div class="flex flex-row w-full justify-center leading-tight h-16">
-                    <div class="text-xs text-gray-500 uppercase self-center " style="width: 432px;">Process<br>(single product release)</div>
-                    <div class="text-xs text-gray-500 uppercase self-center pl-16 ml-2" style="width: 323px;">People / team involved</div>
-                </div>
-
-                <!--Core-->
-                <div class="flex flex-row justify-center">
-                    <div class="flex flex-row">
-
-                        <div class="flex flex-row justify-center items-center mt-12" style="width: 50px; height: 490px;"><img src="assets/line.svg"></div>
-
-                        <div class="flex flex-col" style="width: 755px">
-
-                            <!--DEFINE-->
-                            <div class="flex flex-row mt-5 relative">
-                                <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                <div class="flex flex-col" style="width: 422px">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">Define problem clearly</div>
-                                        <div class="mx-2 w-4"><img src="assets/star.png"></div>
-                                    </div>
-                                    <div class="text-xs leading-tight text-gray-800 font-light">Listening and note the requirements, asking lot of questions, to know timelines, people involved, expectations, user, customer...to know beforehand on why we are doing it, where should it fit in the existing product</div>
-                                </div>
-                                <div class="flex flex-row justify-start text-gray-600 text-xs self-center pl-16" style="width: 323px;">
-                                    <div><span class="px-1 text-red-700 font-semibold">Myself</span><span class="mx-1">PM</span><span class="mx-1">Other Teams</span></div>
-                                </div> 
-                            </div>
-
-                            <!--BRAINSTORM-->
-                            <div class="flex flex-row mt-5 relative">
-                                <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                <div class="flex flex-col" style="width: 422px">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">Brainstorming with ideas and people</div>
-
-                                    </div>
-                                    <div class="text-xs leading-tight text-gray-800 font-light">Bring lot of ideas and people together (if they aren’t busy) to THINK on solution, tweak, mix-match, add or remove to get a 
-                                    final this-should-work idea</div>
-                                </div>
-                                <div class="flex flex-row justify-start text-gray-600 text-xs self-center pl-16" style="width: 323px;">
-                                    <div><span class="px-1 text-red-700 font-semibold">Myself</span><span class="mx-1">PM</span><span class="mx-1">DEV</span><span class="mx-1">CxO</span><span class="mx-1">Other Teams</span></div>
-                                </div>
-                            </div>
-
-                            <!--FLOWS-->
-                            <div class="flex flex-row mt-5 relative">
-                                <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                <div class="flex flex-col" style="width: 422px">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">User flow & Process flow</div>
-                                        <div class="mx-2 w-4"><img src="assets/star.png"></div>
-                                    </div>
-                                    <div class="text-xs leading-tight text-gray-800 font-light">Creating and validating with “this-should-work idea”, making neccessary changes to solidify the concept</div>
-                                </div>
-                                <div class="flex flex-row justify-start text-gray-600 text-xs self-center pl-16" style="width: 323px;">
-                                    <div><span class="px-1 text-red-700 font-semibold">Myself</span><span class="mx-1">PM</span> </div>
-                                </div>
-                            </div>
-
-                            <!--LOW-FI WIREFRAMES-->
-                            <div class="flex flex-row mt-5 relative">
-                                <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                <div class="flex flex-col" style="width: 422px">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">Low Fidelity Wireframes</div>
-                                        <div class="mx-2 w-4"><img src="assets/star.png"></div>
-                                    </div>
-                                    <div class="text-xs leading-tight text-gray-800 font-light">Adding important data-points and IA, CTA buttons, icons, navigation, real content (no lorem ipsum), placeholder, using grayscale colors…</div>
-                                </div>
-                                <div class="flex flex-row justify-start text-gray-600 text-xs self-center pl-16" style="width: 323px;">
-                                    <div><span class="px-1 text-red-700 font-semibold">Myself</span><span class="mx-1">PM</span> </div>
-                                </div>
-                            </div>
-
-                            <!--HIGH-FI WIREFRAMES-->
-                            <div class="flex flex-row mt-5 relative">
-                                <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                <div class="flex flex-col" style="width: 422px">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">High Fidelity Wireframes</div>
-                                    </div>
-                                    <div class="text-xs leading-tight text-gray-800 font-light">Adding more details like colors, illustrations, images, consistent spacing/typography/existing UI patterns/tone, using sketch symbols, better writing… </div>
-                                </div>
-                                <div class="flex flex-row justify-start text-gray-600 text-xs self-center pl-16" style="width: 323px;">
-                                    <div><span class="px-1 text-red-700 font-semibold">Myself</span><span class="mx-1">PM</span><span class="mx-1">VD</span> </div>
-                                </div>
-                            </div>
-
-                            <!--REVIEW-->
-                            <div class="flex flex-row mt-5 relative">
-                                <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                <div class="flex flex-col" style="width: 422px">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">Final Review & Feedback </div>
-                                    </div>
-                                    <div class="text-xs leading-tight text-gray-800 font-light">Final major changes will be made. Everything else will go in next release.</div>
-                                </div>
-                                <div class="flex flex-row justify-start text-gray-600 text-xs self-center pl-16" style="width: 323px;">
-                                    <div><span class="px-1 text-red-700 font-semibold">Myself</span><span class="mx-1">PM</span><span class="mx-1">VD</span><span class="mx-1">DEV</span> </div>
-                                </div>
-                            </div>
-
-                            <!--HANDOVER-->
-                            <div class="flex flex-row mt-5 relative">
-                                <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                <div class="flex flex-col" style="width: 422px">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">Handover to VD / DEV</div>
-                                        <div class="mx-2 w-4"><img src="assets/star.png"></div>
-                                    </div>
-                                    <div class="text-xs leading-tight text-gray-800 font-light">Sharing the designs to the VD or DEV team and helping them with any critical changes while they build (if required)</div>
-                                </div>
-                                <div class="flex flex-row justify-start text-gray-600 text-xs self-center pl-16" style="width: 323px;">
-                                    <div><span class="px-1 text-red-700 font-semibold">Myself</span><span class="mx-1">VD</span><span class="mx-1">DEV</span> </div>
-                                </div>
-                            </div>
-
-                            <!--LIVE-->
-                            <div class="flex flex-row mt-5 relative">
-                                <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                <div class="flex flex-col" style="width: 422px">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">Going LIVE and collecting Feedback</div>
-                                    </div>
-                                    <div class="text-xs leading-tight font-light text-gray-800">It works. Now collect feedback on it for next release… </div>
-                                </div>
-                                <div class="flex flex-row justify-start text-gray-600 text-xs self-center pl-16" style="width: 323px;">
-                                    <div><span class="px-1 text-red-700 font-semibold">Myself</span><span class="mx-1">PM</span><span class="mx-1">DEV</span><span class="mx-1">CxO</span><span class="mx-1">Other Teams</span> </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!--Footer-->
-                <div class="flex flex-row mt-8">
-                    <!--KEY-->
-                    <div class="flex flex-col border border-gray-600" style="width: 242px;">
-                        <div class="text-gray-600 font-normal text-xs border-b border-gray-600 pl-4 py-2">KEY</div>
-                        <div class="flex flex-col">
-                            <div class="text-xs text-gray-800 font-light pl-4 pt-2">PM - Product Manager<br>DEV - Developers<br>CxO - CTO / CEO<br>VD - Visual Designer</div>
-                            <div class="flex flex-row pl-4 py-4 items-center">
-                                <div class="w-4"><img src="assets/star.png"></div>
-                                <div class="text-xs text-gray-800 font-light ml-2">essential for my designs</div>
-                            </div>
-                        </div> 
-                    </div>
-
-                    <!--NOTE-->
-                    <div class="flex flex-col border border-gray-600" style="width: 493px; margin-left: 24px;">
-                        <div class="text-gray-600 font-normal text-xs border-b border-gray-600 pl-4 py-2">NOTE</div>
-                        <div class="flex flex-col px-4 py-3">
-                            <div class="text-xs text-gray-800 font-light">Few other process steps that I miss adding :
-                            </div>
-
-                            <!--User Research-->
-                            <div class="flex flex-col py-2">
-                                <div class="flex flex-row items-center">
-                                    <div class="text-sm text-gray-800 font-semibold">User Research</div>
-                                </div>
-                                <div class="text-xs leading-tight font-light text-gray-800">Some of the techniques like interviews, fly on the wall, card sorting, recording user screens, listening customer calls and collecting insights from analytics could be executed. </div>
-                            </div>
-
-                            <!--Testing with actual Users-->
-                            <div class="flex flex-col py-2">
-                                <div class="flex flex-row items-center">
-                                    <div class="text-sm text-gray-800 font-semibold">Testing with actual Users</div>
-                                </div>
-                                <div class="text-xs leading-tight font-light text-gray-800">Knowing how actual users use the product gives real insight on what is good or bad and can be improved upon.  </div>
-                            </div>
-
-                            <!--High Fidelity Mockup-->
-                            <div class="flex flex-col py-2">
-                                <div class="flex flex-row items-center">
-                                    <div class="text-sm text-gray-800 font-semibold">High Fidelity Mockup </div>
-                                </div>
-                                <div class="text-xs leading-tight font-light text-gray-800">Designing polished UI is not something I really crave for. Let the VD handle that. I am more of deep-thinker and ASAP maker. </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                </div>
-        
-                <!--process (product) - mobile-->
-                <details class="mt-4 mb-2 sm:hidden">
-                    <summary class="text-sm mx-3 cursor-pointer text-blue-800">Process I Follow (at ekincare)</summary>
-                    <section class="flex flex-col mb-8 ">
-                    <!--Header-->
-                    <div class="flex flex-row w-full leading-tight mt-4">
-                        <div class="text-xs text-gray-500 uppercase self-center mx-3 ">Process I follow<br>(single product release)</div>
-                    </div>
-
-                    <!--Core-->
-                    <div class="flex flex-row">
-                        <div class="flex flex-row">
-
-                            <div class="flex flex-row justify-center flex-shrink-0 pt-8 pb-12" style="width: 50px; height: auto">
-                                <div class="rounded" style="background-color: #0065FB; width: 2px"></div>
-                            </div>
-                            <div class="flex flex-col">
-
-                                <!--DEFINE-->
-                                <div class="flex flex-col mt-5 relative">
-                                    <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                    <div class="flex flex-col" style="max-width: 422px">
-                                        <div class="flex flex-row items-center">
-                                            <div class="text-sm text-gray-800 font-semibold">Define problem clearly</div>
-                                            <div class="mx-2 w-4"><img src="assets/star.png"></div>
-                                        </div>
-                                        <div class="text-xs leading-tight text-gray-800 font-light">Listening and note the requirements, asking lot of questions, to know timelines, people involved, expectations, user, customer...to know beforehand on why we are doing it, where should it fit in the existing product</div>
-                                    </div>
-                                    <div class="flex flex-row justify-start text-gray-600 text-xs mt-1">
-                                        <div><span class="text-red-700 font-semibold mr-1">Myself</span><span class="mx-1">PM</span><span class="mx-1">Other Teams</span></div>
-                                    </div> 
-                                </div>
-
-                                <!--BRAINSTORM-->
-                                <div class="flex flex-col mt-5 relative">
-                                    <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                    <div class="flex flex-col" style="max-width: 422px">
-                                        <div class="flex flex-row items-center">
-                                            <div class="text-sm text-gray-800 font-semibold">Brainstorming with ideas and people</div>
-
-                                        </div>
-                                        <div class="text-xs leading-tight text-gray-800 font-light">Bring lot of ideas and people together (if they aren’t busy) to THINK on solution, tweak, mix-match, add or remove to get a 
-                                        final this-should-work idea</div>
-                                    </div>
-                                    <div class="flex flex-row justify-start text-gray-600 text-xs mt-1">
-                                        <div><span class="text-red-700 font-semibold mr-1">Myself</span><span class="mx-1">PM</span><span class="mx-1">DEV</span><span class="mx-1">CxO</span><span class="mx-1">Other Teams</span></div>
-                                    </div>
-                                </div>
-
-                                <!--FLOWS-->
-                                <div class="flex flex-col mt-5 relative">
-                                    <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                    <div class="flex flex-col" style="max-width: 422px">
-                                        <div class="flex flex-row items-center">
-                                            <div class="text-sm text-gray-800 font-semibold">User flow & Process flow</div>
-                                            <div class="mx-2 w-4"><img src="assets/star.png"></div>
-                                        </div>
-                                        <div class="text-xs leading-tight text-gray-800 font-light">Creating and validating with “this-should-work idea”, making neccessary changes to solidify the concept</div>
-                                    </div>
-                                    <div class="flex flex-row justify-start text-gray-600 text-xs mt-1">
-                                        <div><span class="text-red-700 font-semibold mr-1">Myself</span><span class="mx-1">PM</span> </div>
-                                    </div>
-                                </div>
-
-                                <!--LOW-FI WIREFRAMES-->
-                                <div class="flex flex-col mt-5 relative">
-                                    <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                    <div class="flex flex-col" style="max-width: 422px">
-                                        <div class="flex flex-row items-center">
-                                            <div class="text-sm text-gray-800 font-semibold">Low Fidelity Wireframes</div>
-                                            <div class="mx-2 w-4"><img src="assets/star.png"></div>
-                                        </div>
-                                        <div class="text-xs leading-tight text-gray-800 font-light">Adding important data-points and IA, CTA buttons, icons, navigation, real content (no lorem ipsum), placeholder, using grayscale colors…</div>
-                                    </div>
-                                    <div class="flex flex-row text-gray-600 text-xs mt-1">
-                                        <div><span class="text-red-700 font-semibold mr-1">Myself</span><span class="mx-1">PM</span> </div>
-                                    </div>
-                                </div>
-
-                                <!--HIGH-FI WIREFRAMES-->
-                                <div class="flex flex-col mt-5 relative">
-                                    <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                    <div class="flex flex-col" style="max-width: 422px">
-                                        <div class="flex flex-row items-center">
-                                            <div class="text-sm text-gray-800 font-semibold">High Fidelity Wireframes</div>
-                                        </div>
-                                        <div class="text-xs leading-tight text-gray-800 font-light">Adding more details like colors, illustrations, images, consistent spacing/typography/existing UI patterns/tone, using sketch symbols, better writing… </div>
-                                    </div>
-                                    <div class="flex flex-row justify-start text-gray-600 text-xs mt-1">
-                                        <div><span class="text-red-700 font-semibold mr-1">Myself</span><span class="mx-1">PM</span><span class="mx-1">VD</span> </div>
-                                    </div>
-                                </div>
-
-                                <!--REVIEW-->
-                                <div class="flex flex-col mt-5 relative">
-                                    <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                    <div class="flex flex-col" style="max-width: 422px">
-                                        <div class="flex flex-row items-center">
-                                            <div class="text-sm text-gray-800 font-semibold">Final Review & Feedback </div>
-                                        </div>
-                                        <div class="text-xs leading-tight text-gray-800 font-light">Final major changes will be made. Everything else will go in next release.</div>
-                                    </div>
-                                    <div class="flex flex-row justify-start text-gray-600 text-xs mt-1">
-                                        <div><span class="text-red-700 font-semibold mr-1">Myself</span><span class="mx-1">PM</span><span class="mx-1">VD</span><span class="mx-1">DEV</span> </div>
-                                    </div>
-                                </div>
-
-                                <!--HANDOVER-->
-                                <div class="flex flex-col mt-5 relative">
-                                    <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                    <div class="flex flex-col" style="max-width: 422px">
-                                        <div class="flex flex-row items-center">
-                                            <div class="text-sm text-gray-800 font-semibold">Handover to VD / DEV</div>
-                                            <div class="mx-2 w-4"><img src="assets/star.png"></div>
-                                        </div>
-                                        <div class="text-xs leading-tight text-gray-800 font-light">Sharing the designs to the VD or DEV team and helping them with any critical changes while they build (if required)</div>
-                                    </div>
-                                    <div class="flex flex-row justify-start text-gray-600 text-xs mt-1">
-                                        <div><span class="text-red-700 font-semibold mr-1">Myself</span><span class="mx-1">VD</span><span class="mx-1">DEV</span> </div>
-                                    </div>
-                                </div>
-
-                                <!--LIVE-->
-                                <div class="flex flex-col mt-5 relative">
-                                    <div class="flex-shrink-0 absolute top-0 left-0 -mx-8 mt-1"><img src="assets/circle_1.svg"></div>
-                                    <div class="flex flex-col" style="max-width: 422px">
-                                        <div class="flex flex-row items-center">
-                                            <div class="text-sm text-gray-800 font-semibold">Going LIVE and collecting Feedback</div>
-                                        </div>
-                                        <div class="text-xs leading-tight font-light text-gray-800">It works. Now collect feedback on it for next release… </div>
-                                    </div>
-                                    <div class="flex flex-row justify-start text-gray-600 text-xs mt-1">
-                                        <div><span class="text-red-700 font-semibold mr-1">Myself</span><span class="mx-1">PM</span><span class="mx-1">DEV</span><span class="mx-1">CxO</span><span class="mx-1">Other Teams</span> </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Footer-->
-                    <div class="flex flex-col mt-8 mx-3">
-                        <!--KEY-->
-                        <div class="flex flex-col border border-gray-600">
-                            <div class="text-gray-600 font-normal text-xs border-b border-gray-600 pl-4 py-2">KEY</div>
-                            <div class="flex flex-col">
-                                <div class="text-xs text-gray-800 font-light pl-4 pt-2">PM - Product Manager<br>DEV - Developers<br>CxO - CTO / CEO<br>VD - Visual Designer</div>
-                                <div class="flex flex-row pl-4 py-4 items-center">
-                                    <div class="w-4"><img src="assets/star.png"></div>
-                                    <div class="text-xs text-gray-800 font-light ml-2">essential for my designs</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--NOTE-->
-                        <div class="flex flex-col border border-gray-600 mt-3">
-                            <div class="text-gray-600 font-normal text-xs border-b border-gray-600 pl-4 py-2">NOTE</div>
-                            <div class="flex flex-col px-4 py-3">
-                                <div class="text-xs text-gray-800 font-light">Few process steps are good but I use them sparingly. I don’t get much time to do them as I think I should (like properly) :
-                                </div>
-
-                                <!--User Research-->
-                                <div class="flex flex-col py-2">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">User Research</div>
-                                    </div>
-                                    <div class="text-xs leading-tight font-light text-gray-800">Some of the techniques like interviews, fly on the wall, card sorting, recording user screens, listening customer calls and collecting insights from analytics are my favorite. </div>
-                                </div>
-
-                                <!--Testing with actual Users-->
-                                <div class="flex flex-col py-2">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">Testing with actual Users</div>
-                                    </div>
-                                    <div class="text-xs leading-tight font-light text-gray-800">Knowing how actual users use the product gives real insight on what is good or bad and can be improved upon.  </div>
-                                </div>
-
-                                <!--High Fidelity Mockup-->
-                                <div class="flex flex-col py-2">
-                                    <div class="flex flex-row items-center">
-                                        <div class="text-sm text-gray-800 font-semibold">High Fidelity Mockup </div>
-                                    </div>
-                                    <div class="text-xs leading-tight font-light text-gray-800">Designing polished UI is not something I really crave for. Let the VD handle that. I am more of deep-thinker and ASAP maker. </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    </section>
-                </details>
-                
-                <!--ekincare work snippets-->
-                <div class="text-xs text-gray-800 ">The best part of working in a product based small startup is freedom to learn. <br>My work here involved : 
-                    <ul class="list-disc ml-4">
-                        <li><em>PRODUCT</em><br>  1. Designing new mockups/wireframes/user-flow against features (as per product roadmap) for mobile/web. These are build to see the end-to-end functionality, for data representation and sometimes for pure ideation. :-)
-                        <div class="flex flex-none flex-wrap justify-start">
-                            <div class="max-w-md"><img src="images/1.jpg" alt="pharmacy_wireframe"></div>
-                            <div class="w-32"><img src="images/2.jpg" alt="leaderboard_wireframe_mobile"></div>
-                            <div class="max-w-xs"><img src="images/3.jpg" alt="leaderboard_wireframe_web"></div>
-                            <div class="max-w-md"><img src="images/4.png" alt="html_mailer_health_check"></div>
-                        </div>
-                        2. Writing(Microcopy) is important and do ensure to use simple vocabulary and generic language for the user to comprehend (NO LOREM IPSUM...LIKE NEVER !!!)</li><br>
-                        <li><em>MARKETING</em><br>Designing webpages(design + code), coding HTML Mailers for corporates, quick design reviews of final deliverables (ads/poster/standee/brochure...) by marketing team or Graphic Designers</li>
-                        <div class="flex flex-none flex-wrap justify-start">
-                            <div class="max-w-md"><img src="images/5.png" alt="wireframe_5"></div>
-                            <div class="max-w-xs"><img src="images/6.png" alt="wireframe_6"></div>
-                        </div>
-                        <li><em>OTHER</em><br>Collecting user pain-points from customer support team (via call/chatbot) ...</li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-        
-        <!--WORK at ThinkDesign-->
-        <details class="mt-2 mb-2">
-            <summary class="text-sm mx-3 cursor-pointer text-blue-500">Work at ThinkDesign <em>(1.1 Year)</em></summary>
-            <div class="mx-3 bg-gray-100 p-2 rounded">
-                <div class="text-xs text-gray-800 ">Design Studio has its own charm. Your design sense improves a lot as you are always among designers (better than me..:-) <br>My work here involved : 
-                    <ul class="list-disc ml-4">
-                        <li><em>e-Customs enterprise web application</em><br>Gathering product and business requirements from stakeholders via workshop, creating IA, task flow diagrams for each modules, click through wireframes, dashboard design</li>
-                        <div class="flex flex-none flex-wrap justify-start">
-                            <div class="max-w-xl p-1"><img src="images/13.jpg" alt="workshop_photo"></div>
-                            <div class="max-w-xs p-1"><img src="images/12.png" alt="wireframe_e_customs"></div>
-                            <div class="max-w-xs p-1"><img src="images/14.jpg" alt="dashboard_concept_e_customs"></div>
-                            
-                        </div>
-                        <li><em>Agriculture inventory management platform web & mobile</em><br>Gathering client, tech and user requirements, customer journey mapping, user profiling, visual design</li>
-                        <div class="flex flex-none flex-wrap justify-start">
-                            <div class="max-w-sm p-1"><img src="images/7.jpg" alt="wireframe_7"></div>
-                            <div class="w-24 p-1"><img src="images/8.jpg" alt="wireframe_8"></div>
-                            <div class="max-w-xs p-1"><img src="images/9.jpg" alt="wirefrme_9"></div>
-                            <div class="w-24 p-1"><img src="images/10.jpg" alt="wireframe_10"></div>
-                            <div class="max-w-xs p-1"><img src="images/11.jpg" alt="wireframe_10"></div>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </details>
-        
-        <!--WORK at CoCubes-->
-        <details class="mt-2 mb-4">
-            <summary class="text-sm mx-3 cursor-pointer text-blue-500">Work at CoCubes<em> (5 months)</em></summary>
-            <div class="mx-3 bg-gray-100 p-2 rounded">
-                <div class="text-xs text-gray-800 ">First job. Worked on Illustrator a lot to make UI-screens for different desktop resolutions. <br>My work here involved : 
-                    <ul class="list-disc ml-4">
-                        <li>UI Design for Coding and Multiple Choice Question platform, Information Design for automated Diagnostic Career Test (DCT) reports</li>
-                        <div class="flex flex-none flex-wrap justify-start">
-                            <div class="max-w-sm p-1"><img src="images/16.jpg" alt="DCT_test_report_sketch"></div>
-                            <div class="max-w-sm p-1"><img src="images/15.jpg" alt="DCT_test_report_screen"></div>
-                            <div class="max-w-sm p-1"><img src="images/17.jpg" alt="coding_screen"></div>
-                            <div class="max-w-sm p-1"><img src="images/18.jpg" alt="MCQ_screen"></div>
-                        </div>
-                        
-                    </ul>
-                </div>
-            </div>
-        </details>
-            
         </div>
         
         <!--after work-->
-        <div id="after_work_container" style="display: none;">
+        <div id="afterwork_container" style="display: none;" class="flex-col items-center content-center mx-5">
             
             <!--Articles on web-->
-            <div class="mx-3 bg-gray-100 p-2 rounded my-2">
+            <div class="flex flex-col mx-3 bg-gray-100 p-2 rounded my-2 card_800">
                 <div class="text-gray-900 text-xs font-bold mb-2">📃 Articles
                 </div>
                 <ul class="text-xs">
@@ -620,7 +163,7 @@
             </div>
             
             <!--Books-->
-            <div class="mx-3 bg-gray-100 p-2 rounded my-2">
+            <div class="mx-3 bg-gray-100 p-2 rounded my-2 card_800">
                 <div class="text-gray-900 text-xs font-bold">📚 Books
                     <div class="text-xs text-gray-800 font-normal mb-2">Books I have read (few books also have notes):</div>
                 </div>
@@ -636,7 +179,7 @@
             </div>
 
             <!--Other random Stuff-->
-            <div class="mx-3 bg-gray-100 p-2 rounded my-2">
+            <div class="mx-3 bg-gray-100 p-2 rounded my-2 card_800">
                 <div class="text-gray-900 text-xs font-bold mb-2">🧊 Other Random Cool Stuff</div>
                     <div class="text-xs text-gray-800 font-normal">A virtual keyboard
                         <a target="_blank" class="ml-1 text-blue-500" href="/other/Virtual Keyboard/vc.html">View Demo<span><img class="h-3 w-3 ml-1 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a> 
@@ -651,7 +194,7 @@
 
             
             <!--Gaming-->
-            <div class="mx-3 bg-gray-100 p-2 rounded my-2">
+            <div class="mx-3 bg-gray-100 p-2 rounded my-2 card_800">
                 <div class="text-gray-900 text-xs font-bold mb-2">🎮 Gaming (mostly on PS4)
                     <ul class="list-disc ml-4 text-xs text-gray-800 font-normal">
                         <li><em>Horizon Zero Dawn</em> - No matter what I play next to it, I just cannot stop playing this game. Brilliant Graphics, beautiful story that combines everthying Man + machine + AI + Earth.</li>
@@ -663,7 +206,7 @@
             </div>
             
             <!--Sports-->
-            <div class="mx-3 bg-gray-100 p-2 rounded my-2">
+            <div class="mx-3 bg-gray-100 p-2 rounded my-2 card_800">
                 <div class="text-gray-900 text-xs font-bold">🏐 Sports
                     <ul class="list-disc ml-4 text-xs text-gray-800 font-normal">
                         <li><em>Badminton</em> - Started playing from 6th class onwards and never stopped. Proudly an Advanced Badminton Player.</li>
@@ -671,8 +214,6 @@
                     </ul>
                 </div>
             </div>
-
-            
         </div>
        
     </body>

@@ -1,17 +1,19 @@
 To do 
 
-3. Consistency wrt Extenal Link: font-weight, icon needed or not; CTA text 
-4. Please complete the book notes; Link back them to the website
-5. New Design for Books card; more user friendly 
-6. Size or the header links are small; improve the design 
-7. Shift the Arduino Instructables and 5.1 channel HTS from articles to Random Cool Stuff
-8. When the vertical content increases leading to scroll; the scrollbar adds a small jump of pixels; make header sticky or redesign
+# Need to keep max-width 1024px and evrything centered
+# Need to remove tailwaind css 
+# Consistency wrt Extenal Link: font-weight, icon needed or not; CTA text 
+# Please complete the book notes; Link back them to the website
+# New Design for Books card; more user friendly 
+# Size or the header links are small; improve the design 
+# Shift the Arduino Instructables and 5.1 channel HTS from articles to Random Cool Stuff
+# When the vertical content increases leading to scroll; the scrollbar adds a small jump of pixels; make header sticky or redesign
 
 Work Snippets :
 1. Have to prioritize and add one work from Wingify and one article
 
 Future Update 
-1. Stive for Accessibilty Level AAA 
+1. Stive for Accessibilty Level AA 
 2. Privacy and user control popup; Design that also; More honesty towards viewer   
 
 -------------
@@ -22,3 +24,24 @@ Under books the book name were coming as anchor tag links; now removed
 Change the text of calculator; was looking quite cheezy
 "After work" font weight was quite less; poor readability; replaced the font-hairline to font-normal and font-black to font-bold
 Removed incomplete secondary work frok Innovapptive list "create a font-file using figma + fontlab - medium article" 
+
+-------------
+22-july-21 :
+WIP for the new Bookshelf 
+
+------------
+28-july-2021:
+Prioritized card design for work; WIP; One card code Done
+added <a target="_blank" rel="noopener noreferrer"> 
+
+---
+2 Aug 2021:
+Tab redesigned (it's not that good 7/10), but much better then previous version
+Commented the header code, until I add a footer, this looks much neat
+Coorected all hover card effects
+Removed JS from the HTML to a spearate file 
+
+Deployed the chnages to master
+
+
+

@@ -5,6 +5,11 @@ Anshul
 
 ---VERSION LOG---
 
+# Version v5
+Refreshed the design a bit, removed lot of old design components with new (cards, tab)
+Two new font introduced - Inter for text and Lora for Headings
+One of my work from past company also added 
+
 # Version v4
 Added Sparkle favicon to the HTML 
 Under Books and Article : Added links for notes on few books, Aricle links 
