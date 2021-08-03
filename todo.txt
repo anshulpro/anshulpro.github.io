@@ -1,5 +1,12 @@
 To do 
 
+Issues:
+some of the text is breaking and flowing into next line in wrong manner
+THe first line "after Hi", line height is not correct
+On ip7 the horizontal scroll is also coming..
+Add an option to download you latest CV from the site, will help ypu and others
+Links for twitter, Linkedin are also to be added
+
 # Need to keep max-width 1024px and evrything centered
 # Need to remove tailwaind css 
 # Consistency wrt Extenal Link: font-weight, icon needed or not; CTA text 
@@ -42,6 +49,8 @@ Coorected all hover card effects
 Removed JS from the HTML to a spearate file 
 
 Deployed the chnages to master
+
+
 
 
 
