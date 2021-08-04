@@ -7,6 +7,8 @@ On ip7 the horizontal scroll is also coming..
 Add an option to download you latest CV from the site, will help ypu and others
 Links for twitter, Linkedin are also to be added
 
+# add <p translate="no">text</p> to places where you don't want page to translate
+# you can add subtle sound on the user interactions 
 # Need to keep max-width 1024px and evrything centered
 # Need to remove tailwaind css 
 # Consistency wrt Extenal Link: font-weight, icon needed or not; CTA text 
