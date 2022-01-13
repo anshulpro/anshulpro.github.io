@@ -16,6 +16,14 @@
     line-height: 1.58;
 }
 
+.font_inter{
+    font-family: Inter, sans-serif;
+}
+
+.font_lora{
+    font-family: Lora, serif;
+}
+
 
 /* global image class*/
 img{
@@ -29,6 +37,26 @@ body{
 .card_800{
     max-width: 800px;
     width: 100%;
+}
+
+/* styling for the twitter, linkedin and dribbble  */
+.button_twitter, .button_linkedin, .button_dribbble{
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    border-radius: 50%;
+}
+.button_twitter:hover{
+    background-color: #E8F5FD;
+}
+.button_linkedin:hover{
+    background-color: #ebebeb;
+}
+.button_dribbble:hover{
+    background-color: #FFE6EF;
 }
 
 /* Card CSS */
