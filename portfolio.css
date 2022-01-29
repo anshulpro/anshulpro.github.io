@@ -47,6 +47,7 @@ body{
     background-color: #f8f8f8;
     border-radius: 21px;
     padding: 0 14px 0 14px;
+    flex-shrink: 0;
 }
 
 /* styling for the twitter, linkedin and dribbble  */
