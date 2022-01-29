@@ -50,7 +50,7 @@ body{
 }
 
 /* styling for the twitter, linkedin and dribbble  */
-.button_twitter, .button_linkedin, .button_dribbble{
+.button_twitter, .button_linkedin{
     height: 42px;
     width: 42px;
     display: flex;
@@ -58,15 +58,13 @@ body{
     justify-content: center;
     background-color: #f8f8f8;
     border-radius: 50%;
+    flex-shrink: 0;;
 }
 .button_twitter:hover{
     background-color: #E8F5FD;
 }
 .button_linkedin:hover{
     background-color: #ebebeb;
-}
-.button_dribbble:hover{
-    background-color: #FFE6EF;
 }
 
 /* Card CSS */
