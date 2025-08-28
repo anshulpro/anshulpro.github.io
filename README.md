@@ -5,6 +5,9 @@ Anshul
 
 ---VERSION LOG---
 
+# Version v6
+Upcoming...
+
 # Version v5
 Refreshed the design a bit, removed lot of old design components with new (cards, tab)
 Two new font introduced - Inter for text and Lora for Headings

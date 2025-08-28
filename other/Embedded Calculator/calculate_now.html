@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="/other/Embedded Calculator/calculate_now.css"> 
+    <script src="/other/Embedded Calculator/calculate_now.js" defer></script>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <h1>Embedded Calculator</h1>
+        <p>It could be used as a toggle based feature based on the input field requirement on a form. This is one variant. More variants can be designed based on specific fields.</p>
+    </div>
+    <label id="input_field_parent">Actual Rent Paid * 
+        <div class="flex_row">
+            <input id="input_field" type="text" placeholder="0">
+            <span class="currencyPrefix">₹</span>
+            <button id="calculate_button" class="calculate_button_OFF">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="">
+                    <g clip-path="url(#clip0_3246_115052)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 2.4998C4.53976 2.4998 4.16667 2.87289 4.16667 3.33313V16.6665C4.16667 17.1267 4.53976 17.4998 5 17.4998H15C15.4602 17.4998 15.8333 17.1267 15.8333 16.6665V3.33313C15.8333 2.87289 15.4602 2.4998 15 2.4998H5ZM2.5 3.33313C2.5 1.95242 3.61929 0.83313 5 0.83313H15C16.3807 0.83313 17.5 1.95242 17.5 3.33313V16.6665C17.5 18.0472 16.3807 19.1665 15 19.1665H5C3.61929 19.1665 2.5 18.0472 2.5 16.6665V3.33313Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.8335 4.99972C5.8335 4.53948 6.20659 4.16638 6.66683 4.16638H13.3335C13.7937 4.16638 14.1668 4.53948 14.1668 4.99972C14.1668 5.45995 13.7937 5.83305 13.3335 5.83305H6.66683C6.20659 5.83305 5.8335 5.45995 5.8335 4.99972Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3333 10.8331C13.7936 10.8331 14.1667 11.2062 14.1667 11.6665V14.9998C14.1667 15.46 13.7936 15.8331 13.3333 15.8331C12.8731 15.8331 12.5 15.46 12.5 14.9998V11.6665C12.5 11.2062 12.8731 10.8331 13.3333 10.8331Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 8.33309C12.5 7.87285 12.8731 7.49976 13.3333 7.49976H13.3417C13.8019 7.49976 14.175 7.87285 14.175 8.33309C14.175 8.79333 13.8019 9.16642 13.3417 9.16642H13.3333C12.8731 9.16642 12.5 8.79333 12.5 8.33309Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.1665 8.33309C9.1665 7.87285 9.5396 7.49976 9.99984 7.49976H10.0082C10.4684 7.49976 10.8415 7.87285 10.8415 8.33309C10.8415 8.79333 10.4684 9.16642 10.0082 9.16642H9.99984C9.5396 9.16642 9.1665 8.79333 9.1665 8.33309Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.8335 8.33309C5.8335 7.87285 6.20659 7.49976 6.66683 7.49976H6.67516C7.1354 7.49976 7.5085 7.87285 7.5085 8.33309C7.5085 8.79333 7.1354 9.16642 6.67516 9.16642H6.66683C6.20659 9.16642 5.8335 8.79333 5.8335 8.33309Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.1665 11.6665C9.1665 11.2062 9.5396 10.8331 9.99984 10.8331H10.0082C10.4684 10.8331 10.8415 11.2062 10.8415 11.6665C10.8415 12.1267 10.4684 12.4998 10.0082 12.4998H9.99984C9.5396 12.4998 9.1665 12.1267 9.1665 11.6665Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.8335 11.6665C5.8335 11.2062 6.20659 10.8331 6.66683 10.8331H6.67516C7.1354 10.8331 7.5085 11.2062 7.5085 11.6665C7.5085 12.1267 7.1354 12.4998 6.67516 12.4998H6.66683C6.20659 12.4998 5.8335 12.1267 5.8335 11.6665Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.1665 14.9997C9.1665 14.5395 9.5396 14.1664 9.99984 14.1664H10.0082C10.4684 14.1664 10.8415 14.5395 10.8415 14.9997C10.8415 15.46 10.4684 15.833 10.0082 15.833H9.99984C9.5396 15.833 9.1665 15.46 9.1665 14.9997Z" fill="#585858"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.8335 14.9997C5.8335 14.5395 6.20659 14.1664 6.66683 14.1664H6.67516C7.1354 14.1664 7.5085 14.5395 7.5085 14.9997C7.5085 15.46 7.1354 15.833 6.67516 15.833H6.66683C6.20659 15.833 5.8335 15.46 5.8335 14.9997Z" fill="#585858"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_3246_115052">
+                        <rect width="20" height="20" fill="white" transform="translate(0 -0.000244141)"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </button>
+            </div>
+        </div>
+    </label> 
+
+    <section id="calculate_parent" class="hidden">
+        <header id="calculate_heading">
+            <div style="display: flex; align-items: center; gap: 2px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 1.75004C3.17783 1.75004 2.91667 2.01121 2.91667 2.33337V11.6667C2.91667 11.9889 3.17783 12.25 3.5 12.25H10.5C10.8222 12.25 11.0833 11.9889 11.0833 11.6667V2.33337C11.0833 2.01121 10.8222 1.75004 10.5 1.75004H3.5ZM1.75 2.33337C1.75 1.36688 2.5335 0.583374 3.5 0.583374H10.5C11.4665 0.583374 12.25 1.36688 12.25 2.33337V11.6667C12.25 12.6332 11.4665 13.4167 10.5 13.4167H3.5C2.5335 13.4167 1.75 12.6332 1.75 11.6667V2.33337Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.0835 3.49996C4.0835 3.17779 4.34466 2.91663 4.66683 2.91663H9.3335C9.65566 2.91663 9.91683 3.17779 9.91683 3.49996C9.91683 3.82213 9.65566 4.08329 9.3335 4.08329H4.66683C4.34466 4.08329 4.0835 3.82213 4.0835 3.49996Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.33333 7.58337C9.6555 7.58337 9.91667 7.84454 9.91667 8.16671V10.5C9.91667 10.8222 9.6555 11.0834 9.33333 11.0834C9.01117 11.0834 8.75 10.8222 8.75 10.5V8.16671C8.75 7.84454 9.01117 7.58337 9.33333 7.58337Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 5.83333C8.75 5.51117 9.01117 5.25 9.33333 5.25H9.33917C9.66133 5.25 9.9225 5.51117 9.9225 5.83333C9.9225 6.1555 9.66133 6.41667 9.33917 6.41667H9.33333C9.01117 6.41667 8.75 6.1555 8.75 5.83333Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4165 5.83333C6.4165 5.51117 6.67767 5.25 6.99984 5.25H7.00567C7.32784 5.25 7.589 5.51117 7.589 5.83333C7.589 6.1555 7.32784 6.41667 7.00567 6.41667H6.99984C6.67767 6.41667 6.4165 6.1555 6.4165 5.83333Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.0835 5.83333C4.0835 5.51117 4.34466 5.25 4.66683 5.25H4.67266C4.99483 5.25 5.256 5.51117 5.256 5.83333C5.256 6.1555 4.99483 6.41667 4.67266 6.41667H4.66683C4.34466 6.41667 4.0835 6.1555 4.0835 5.83333Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4165 8.16671C6.4165 7.84454 6.67767 7.58337 6.99984 7.58337H7.00567C7.32784 7.58337 7.589 7.84454 7.589 8.16671C7.589 8.48887 7.32784 8.75004 7.00567 8.75004H6.99984C6.67767 8.75004 6.4165 8.48887 6.4165 8.16671Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.0835 8.16671C4.0835 7.84454 4.34466 7.58337 4.66683 7.58337H4.67266C4.99483 7.58337 5.256 7.84454 5.256 8.16671C5.256 8.48887 4.99483 8.75004 4.67266 8.75004H4.66683C4.34466 8.75004 4.0835 8.48887 4.0835 8.16671Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.4165 10.5C6.4165 10.1778 6.67767 9.91663 6.99984 9.91663H7.00567C7.32784 9.91663 7.589 10.1778 7.589 10.5C7.589 10.8221 7.32784 11.0833 7.00567 11.0833H6.99984C6.67767 11.0833 6.4165 10.8221 6.4165 10.5Z" fill="#585858"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.0835 10.5C4.0835 10.1778 4.34466 9.91663 4.66683 9.91663H4.67266C4.99483 9.91663 5.256 10.1778 5.256 10.5C5.256 10.8221 4.99483 11.0833 4.67266 11.0833H4.66683C4.34466 11.0833 4.0835 10.8221 4.0835 10.5Z" fill="#585858"/>
+                </svg>
+                <div>Calculate</div>
+            </div>
+        </header>
+
+        <div id="calculate_parent_body">
+            <section id="calculation_history">
+                <!-- all the history list items will be injected here -->
+            </section>
+            <section id="calculator">
+                <div id="display_screen">
+                    <div id="display_screen_text_secondary"></div>
+                    <div id="display_screen_text_primary"></div>
+                    <button id="save_current_calculation_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33301 2.66634C3.1562 2.66634 2.98663 2.73658 2.8616 2.8616C2.73658 2.98663 2.66634 3.1562 2.66634 3.33301V12.6663C2.66634 12.8432 2.73658 13.0127 2.8616 13.1377C2.98663 13.2628 3.1562 13.333 3.33301 13.333H12.6663C12.8432 13.333 13.0127 13.2628 13.1377 13.1377C13.2628 13.0127 13.333 12.8432 13.333 12.6663V5.60915L10.3902 2.66634H3.33301ZM1.91879 1.91879C2.29387 1.54372 2.80257 1.33301 3.33301 1.33301H10.6663C10.8432 1.33301 11.0127 1.40325 11.1377 1.52827L14.4711 4.8616C14.5961 4.98663 14.6663 5.1562 14.6663 5.33301V12.6663C14.6663 13.1968 14.4556 13.7055 14.0806 14.0806C13.7055 14.4556 13.1968 14.6663 12.6663 14.6663H3.33301C2.80257 14.6663 2.29387 14.4556 1.91879 14.0806C1.54372 13.7055 1.33301 13.1968 1.33301 12.6663V3.33301C1.33301 2.80257 1.54372 2.29387 1.91879 1.91879Z" fill="#0F172A"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 8.66667C4 8.29848 4.29848 8 4.66667 8H11.3333C11.7015 8 12 8.29848 12 8.66667V14C12 14.3682 11.7015 14.6667 11.3333 14.6667C10.9651 14.6667 10.6667 14.3682 10.6667 14V9.33333H5.33333V14C5.33333 14.3682 5.03486 14.6667 4.66667 14.6667C4.29848 14.6667 4 14.3682 4 14V8.66667Z" fill="#0F172A"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.66667 1.33301C5.03486 1.33301 5.33333 1.63148 5.33333 1.99967V4.66634H10C10.3682 4.66634 10.6667 4.96482 10.6667 5.33301C10.6667 5.7012 10.3682 5.99967 10 5.99967H4.66667C4.29848 5.99967 4 5.7012 4 5.33301V1.99967C4 1.63148 4.29848 1.33301 4.66667 1.33301Z" fill="#0F172A"/>
+                        </svg>
+                    </button>
+                    <button id="use_current_calculation_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.1278 3C13.4646 3 13.7497 3.11667 13.983 3.35C14.2163 3.58333 14.333 3.86839 14.333 4.20517L14.333 5.91017L13.333 5.91017L13.333 4.20517C13.333 4.15383 13.3116 4.10683 13.2688 4.06417C13.2262 4.02139 13.1792 4 13.1278 4L2.87151 4C2.82017 4 2.77317 4.02139 2.73051 4.06417C2.68773 4.10683 2.66634 4.15383 2.66634 4.20517L2.66634 11.7948C2.66634 11.8462 2.68773 11.8932 2.73051 11.9358C2.77317 11.9786 2.82017 12 2.87151 12L13.1278 12C13.1792 12 13.2262 11.9786 13.2688 11.9358C13.3116 11.8932 13.333 11.8462 13.333 11.7948L13.333 10.0898L14.333 10.0898L14.333 11.7948C14.333 12.1316 14.2163 12.4167 13.983 12.65C13.7497 12.8833 13.4646 13 13.1278 13L2.87151 13C2.53473 13 2.24967 12.8833 2.01634 12.65C1.78301 12.4167 1.66634 12.1316 1.66634 11.7948L1.66634 4.20517C1.66634 3.86839 1.78301 3.58333 2.01634 3.35C2.24967 3.11667 2.53473 3 2.87151 3L13.1278 3Z" fill="#0F172A"/>
+                            <path d="M10.3666 8.4591L11.0896 7.7566L8.44862 5.1156L5.80762 7.7566L6.53062 8.4591L7.94862 7.03093L7.94862 10.8848L8.94862 10.8848L8.94862 7.03093L10.3666 8.4591Z" fill="#0F172A"/>
+                        </svg>
+                    </button>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; flex-direction: row;">
+                        <div id="grid-container-numbers">
+                            <div class="grid-item-number" id="clearCurrentCalculationButton">AC</div> 
+                            <div class="grid-item-number" id="deleteButton">DEL</div> 
+                            <div class="grid-item-number" id="decimal">.</div> 
+                            <div class="grid-item-number" id="number1">1</div> 
+                            <div class="grid-item-number" id="number2">2</div> 
+                            <div class="grid-item-number" id="number3">3</div> 
+                            <div class="grid-item-number" id="number4">4</div> 
+                            <div class="grid-item-number" id="number5">5</div> 
+                            <div class="grid-item-number" id="number6">6</div> 
+                            <div class="grid-item-number" id="number7">7</div> 
+                            <div class="grid-item-number" id="number8">8</div> 
+                            <div class="grid-item-number" id="number9">9</div> 
+                            <div class="grid-item-number" id="number0">0</div>
+                            <div class="grid-item-number" id="number00">00</div>
+                             <div class="grid-item-number" id="number000">000</div> 
+                        </div>
+                        <div id="grid-container-operator">
+                            <div class="grid-item-operator" id="plusOperator">+</div>
+                            <div class="grid-item-operator" id="minusOperator">-</div>
+                            <div class="grid-item-operator" id="divisionOperator">÷</div>
+                            <div class="grid-item-operator" id="multiplicationOperator">×</div>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div id="equalsTo">=</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</body>
+</html>

@@ -52,7 +52,12 @@ Removed JS from the HTML to a spearate file
 
 Deployed the chnages to master
 
-
-
+---
+28 Aug 2025 
+the animation on the main cards on hover seems little off, correct that
+the past companies can be made bit more applealing, like carousel with b/w logos on company 
+add icons to the cool section, can be renamed to "cool apps"
+add the ps5 section also
+books section can also show thumnails of the books that I have read, mabye a bookshelf kind of representation
 
 
