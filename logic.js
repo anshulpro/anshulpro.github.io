@@ -19,3 +19,10 @@ function make_tab_active(temp)
         document.getElementById("work_tab").classList = "tab_inactive";
     }
 }
+
+//function for hello animation and delay
+const animationStart = () => {
+    document.getElementById('hello_container').classList.add('fin');
+}
+setTimeout(animationStart, 150);
+animationStart();
