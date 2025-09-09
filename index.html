@@ -24,7 +24,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
 
         <!-- JS file for scripting -->
-        <script src="logic.js"></script>
+        <script defer src="logic.js"></script>
         
         <!-- Removed Google Analytics-->
     </head>
@@ -37,6 +37,7 @@
             </div>
             <div class="flex flex-col ml-4 leading-none" style="position: relative;">
                 <!-- <div class="font_lora text-2xl text-gray-800" style="margin-left: -2px;">Hi !</div> -->
+                <!-- this lovely hello animation is by Toshiyuki TAKAHASHI, https://codepen.io/gau -->
                 <div id="hello_container">
                     <svg id="hello-svg" data-name="hello" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 582 197">
                         <title>Hello</title>
@@ -46,7 +47,7 @@
                         <line class="path path-4" x1="561" y1="181.67" x2="561" y2="181.67"/>
                     </svg>
                 </div>
-                <div class="font_inter text-xs text-gray-800 ml-4 leading-snug" style="margin-top: 76px;">I am Anshul Singh<br>and welcome to my webhome.</div>
+                <div class="font_inter text-xs text-gray-800 ml-4 leading-snug" style="margin-top: 64px;">I am Anshul Singh<br>and welcome to my webhome.</div>
                 
                 <!-- <div class="font_inter text-xs text-gray-800 leading-tight mt-1 mb-1 ml-4">
                     <div class="font_inter text-xs text-gray-800 leading-tight italic mb-1">
@@ -126,20 +127,20 @@
             
             <!--Other random Stuff-->
             <div class="mx-3 p-5 rounded my-2 card_800 flex flex-col">
-                <div class="text-gray-900 text-xs font-bold mb-4">🧊 Apps</div>
+                <div class="text-gray-900 text-sm font-bold mb-1">Apps</div>
                 <div class="flex flex-row">
                     <!-- calculate now -->
                     <div class="flex flex-col mr-6">
                         <a target="_blank" href="/other/Embedded Calculator/calculate_now.html">
                             <img class="app_icon" src="/other/Embedded Calculator/calculate_now.png"> 
-                            <div class="text-xs text-gray-700 text-center mt-1">Calculate Now</div>
+                            <div class="text-xs text-gray-700 text-center mt-1 font-medium">Calculate Now</div>
                         </a>
                     </div>
                     <!-- virtual keyboard -->
                     <div class="flex flex-col mr-4">
                         <a target="_blank" href="/other/Virtual Keyboard/vc.html">
                             <img class="app_icon" src="/other/Virtual Keyboard/virtual_keyboard.png"> 
-                            <div class="text-xs text-gray-700 text-center mt-1">Virtual Keys</div>
+                            <div class="text-xs text-gray-700 text-center mt-1 font-medium">Virtual Keys</div>
                         </a>
                     </div>
                 </div>
@@ -147,7 +148,7 @@
 
             <!--Articles on web-->
             <div class="flex flex-col mx-3 bg-gray-100 p-5 rounded my-2 card_800">
-                <div class="text-gray-900 text-xs font-bold mb-2">📃 Articles
+                <div class="text-gray-900 text-sm font-bold mb-1">Articles
                 </div>
                 <ul class="text-xs">
                     <li>Conduct a interface audit<a class="text-blue-500 ml-1" href="https://medium.com/@anshulpro/conduct-an-interface-audit-288c7358df65">View<span><img class="h-3 w-3 ml-1 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
@@ -157,42 +158,38 @@
             </div>
             
             <!--Books-->
-            <div class="mx-3 bg-gray-100 p-5 rounded my-2 card_800">
-                <div class="text-gray-900 text-xs font-bold">📚 Books
-                    <div class="text-xs text-gray-800 mb-2 font-normal">Books I have read (few books also have notes):</div>
+            <div class="mx-3 rounded card_800 mb-3 mt-3 bg-gray-100">
+                <div class="text-gray-900 text-sm font-bold mt-4 pl-4">Books
+                    <div class="text-xs text-gray-800 mb-2 font-normal">Few of the books that I have read and I really like them</div>
                 </div>
-                    <ul class="text-xs text-gray-800">
-                        <li>Principles by <em>Ray Dalio</em><a class="text-blue-500 ml-1" href="https://docs.google.com/document/d/1eEBhYlCkMyzxvtZq8j9ve8iu35m36be7fmmbupQlkq0/edit?usp=sharing">View Notes<span><img class="h-3 w-3 ml-1 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
-                        <li>Zero to One by <em>Peter Thiel</em><a href="#"></a></li>
-                        <li>The Almanack of Naval Ravikant by <em>Eric Jorgenson</em><a href="#"></a></li>
-                        <li>Deep Work by <em>Cal Newport</em><a href="#"></a></li>
-                        <li>Factfulness by <em>Hans Rosling</em><a href="#"></a></li>
-                        <li>The take-off and other true stories by indian cyclists by <em>Cyclop</em><a href="#"></a></li>
-                        <li>Atomic Habits by <em>James Clear</em><a href="#"></a></li>
-                        <li>Thinking, Fast and Slow by <em>Daniel Kahneman</em><a href="#"></a></li>
-                        <li>Elon Musk by <em>Ashlee Vance</em><a href="#"></a></li>
-                        <li>Designing Interfaces by <em>Jenifer Tidwell</em><a href="#"></a></li>
-                        <li>Touch Design for Mobile Interfaces by <em>Steven Hoober</em></li>
-                        <li>Creative Selection by <em>Ken Kocienda</em><a class="text-blue-500 ml-1" href="https://docs.google.com/document/d/12xP8xcz3LNFVRe5pMUOYU_jQ9MIkBicAxA8R_uWvnRI/edit?usp=sharing">View Notes<span><img class="h-3 w-3 ml-1 inline-flex" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li> 
-                        <!-- <li>You're about to make a terrible mistake! by Oliver Sibony<a href="#"></a></li> -->
-                    </ul>
+                <div id="books-wrapper">
+                </div>
             </div>
 
             <!--Gaming-->
             <div class="mx-3 bg-gray-100 p-5 rounded my-2 card_800">
-                <div class="text-gray-900 text-xs font-bold mb-2">🎮 Gaming (on PS4)
+                <div class="text-gray-900 text-sm font-bold mb-1">Gaming
+                    <img class="mb-2 mt-2" src="/images/games_desktop.jpg">
                     <ul class="list-disc ml-4 text-xs text-gray-800 font-normal">
-                        <li><em>Horizon Zero Dawn</em> - No matter what I play next to it, I just cannot stop playing this game. Brilliant Graphics, beautiful story that combines everthying Man + machine + AI + Earth.</li>
+                        <li><em>Horizon Zero Dawn</em> - Brilliant Graphics, beautiful story that combines everthying (Man + machine + AI + Earth)</li>
                         <li><em>Detroit : Become Human </em> - A short but interactive game werein your actions drive the story forward. Good storyline, user interface is too good to ignore, esp. when you rebuild a scenario from a crime scene. </li>
                         <li><em>Hellblade: Senua's Sacrifice </em> - An Psychological horror action adventure game. Amazing sound design, visual puzzles and overall presentation. </li>
                         <li><em>Other</em> - Typoman, Inside, Limbo, Hue, Journey, Firewatch, Unravel 1 and 2, DriveClub, Uncharted series, Metal Gear Solid : Phantom Pain, COD : Infinite Warfare, God of War</li>
                     </ul>
                 </div>
             </div>
+
+            <!--3D prining-->
+            <div class="mx-3 bg-gray-100 p-5 rounded my-2 card_800">
+                <div class="text-gray-900 text-sm font-bold mb-1">3D Printing
+                    <div class="text-xs text-gray-800 mb-2 font-normal">Recently added a 3D Printer and started tinkering around it to print anything...</div>
+                </div>
+                <img class="mt-2 mb-2" src="/images/3d_printer.jpg">
+            </div>
             
             <!--Sports-->
             <div class="mx-3 bg-gray-100 p-5 rounded my-2 card_800">
-                <div class="text-gray-900 text-xs font-bold">🏐 Sports
+                <div class="text-gray-900 text-sm font-bold mb-1">Sports
                     <ul class="list-disc ml-4 text-xs text-gray-800 font-normal">
                         <li><em>Badminton</em> - Started playing from 6th class onwards and never stopped. Proudly an Advanced Badminton Player.</li>
                         <li><em>Other</em> - Football, Cycling, Running (10km in 1:06)</li>
