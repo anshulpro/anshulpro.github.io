@@ -46,7 +46,7 @@ arrayofBooksISBN13.forEach(bookISBN13 => {
 const animationStart = () => {
     document.getElementById('hello_container').classList.add('fin');
 }
-setTimeout(animationStart, 150);
+setTimeout(animationStart, 3500);
 animationStart();
 
 
