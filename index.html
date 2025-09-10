@@ -24,6 +24,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
 
         <!-- JS file for scripting -->
+        <script>
+            //function for hello animation and delay, added at the start delibrately
+            // this lovely hello animation is by Toshiyuki TAKAHASHI, https://codepen.io/gau
+            const animationStart = () => {
+                document.getElementById('hello_container').classList.add('fin');
+            }
+            setTimeout(animationStart, 150);
+            animationStart();
+        </script>
         <script defer src="logic.js"></script>
         
         <!-- Removed Google Analytics-->
@@ -37,7 +46,6 @@
             </div>
             <div class="flex flex-col ml-4 leading-none" style="position: relative;">
                 <!-- <div class="font_lora text-2xl text-gray-800" style="margin-left: -2px;">Hi !</div> -->
-                <!-- this lovely hello animation is by Toshiyuki TAKAHASHI, https://codepen.io/gau -->
                 <div id="hello_container">
                     <svg id="hello-svg" data-name="hello" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 582 197">
                         <title>Hello</title>
@@ -158,7 +166,7 @@
             </div>
             
             <!--Books-->
-            <div class="mx-3 rounded card_800 mb-3 mt-3 bg-gray-100">
+            <div class="mx-3 rounded card_800 mb-3 mt-3 bg-gray-100 overflow-hidden">
                 <div class="text-gray-900 text-sm font-bold mt-4 pl-4">Books
                     <div class="text-xs text-gray-800 mb-2 font-normal">Few of the books that I have read and I really like them</div>
                 </div>
