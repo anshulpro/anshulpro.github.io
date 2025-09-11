@@ -27,11 +27,13 @@
         <script>
             //function for hello animation and delay, added at the start delibrately
             // this lovely hello animation is by Toshiyuki TAKAHASHI, https://codepen.io/gau
+            document.addEventListener('DOMContentLoaded',function(){
+                animationStart();
+            });
             const animationStart = () => {
                 document.getElementById('hello_container').classList.add('fin');
             }
             setTimeout(animationStart, 150);
-            animationStart();
 
             //function for a header tab to make active... 
             function make_tab_active(temp)
