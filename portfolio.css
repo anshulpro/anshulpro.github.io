@@ -212,9 +212,6 @@ body{
     .card_image_d1, .card_image_d2{
         margin-left: 0;
     }
-    #old_works{
-        width:384px;
-    }
 }
 #old_works{
     max-width: 800px;
@@ -251,6 +248,92 @@ body{
     font-size: 0.85rem;
     line-height: 1.58;
 }
+
+#tds_card{
+    background-color: #E9E9FF;
+    max-width: 800px;
+    margin: 20px;
+    border-radius: 14px;
+    transition: 
+        transform 0.4s ease-in-out,
+        box-shadow 0.4s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+#tds_card:hover, #tds_card:focus{
+    cursor: pointer;
+    transform: scale(1.015);
+    transition: 
+        transform 0.4s ease-in-out;
+    box-shadow: 0px 4px 12px rgba(207, 207, 207, 0.13), 0px 0px 12px rgba(198, 198, 198, 0.09);
+    transition:
+        background-color 0.4s cubic-bezier(.4,0,.2,1),
+        color 0.4s cubic-bezier(.4,0,.2,1),
+        transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+#tds_card_fold1{
+    display: flex;
+    position: relative;
+    max-height: 24rem;
+}
+#tds_logo{
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 73px;
+}
+#tds_banner{
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    height: inherit; 
+}
+#tds_card_fold2{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #414D5C;
+    background-color: #E9E9F9;
+    padding: 1rem;
+}
+#tds_tiny_text{
+    color: #383838;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    margin-bottom: 4px;
+}
+#tds_ds_text{
+    color: #383838;
+    font-family: Inter;
+    font-size: 39px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 38px; 
+}
+#tds_desc_text{
+    color: #383838;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    margin-bottom: 1.5rem;
+    margin-top: 0.4rem; 
+}
+#tds_browser_stack{
+    display: flex;
+    flex-direction: row;
+}
+#tds_browser_stack > img{
+    margin-left: -4px;
+}
+
 
 
 
