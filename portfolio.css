@@ -52,7 +52,7 @@ body{
 }
 
 /* styling for the twitter, linkedin and dribbble  */
-.button_twitter, .button_linkedin{
+.button_twitter, .button_linkedin, .button_github {
     height: 42px;
     width: 42px;
     display: flex;
@@ -62,12 +62,14 @@ body{
     border-radius: 50%;
     flex-shrink: 0;
 }
-.button_twitter:hover{
+.button_github > img{
+    height: 22px;
+    width: 22px;    
+}
+.button_twitter:hover, .button_github:hover, .button_linkedin:hover{
     background-color: #E8F5FD;
 }
-.button_linkedin:hover{
-    background-color: #ebebeb;
-}
+
 
 /* Card CSS */
 .card_d1, .card_d2 {
