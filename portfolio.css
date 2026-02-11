@@ -319,19 +319,20 @@ body{
 
 #tds_tiny_text{
     color: #cc3931;
-    font-family: Inter;
-    font-size: 29px;
+    font-family: Lora;
+    font-size: 2rem;
+    line-height: 1.2;
     font-style: normal;
-    font-weight: 100;
-    line-height: 38px; 
+    font-weight: normal;
 }
 #tds_ds_text, #timesheet_title{
+    font-family: Lora;
     color: #383838;
-    font-family: Inter;
-    font-size: 38px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 38px; 
+    font-weight: bold;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 #tds_desc_text{
     color: #383838;
