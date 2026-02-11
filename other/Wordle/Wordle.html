@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle
+    </title>
+
+    <!-- Favicon code -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="wordle_styles.css"> 
+    <script src="wordle_script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">    
+</head>
+
+<body>
+    <div>
+        <h1>Wordle Game</h1>
+        <section id="grid-container">
+        </section>
+        <div class="flex-row">
+            <input type="text" id="input-word" maxlength="5" placeholder="enter a 5 letter word" autofocus>
+            <button type="submit" id="submit-guess">Submit Guess</button>
+        </div>
+        <p id="feedback-message"></p>
+    </div>
+</body>
+</html>
