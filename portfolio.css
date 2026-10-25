@@ -264,16 +264,28 @@ body{
     flex-direction: column;
     height: auto;
 }
-#tds_card:hover, #tds_card:focus, #timesheet_card:hover, #timesheet_card:focus{
+#tds_card:hover, #tds_card:focus, #timesheet_card:hover, #timesheet_card:focus, #eink_card:hover, #eink_card:focus{
     cursor: pointer;
     transform: scale(1.015);
-    transition: 
+    transition:
         transform 0.4s ease-in-out;
     box-shadow: 0px 4px 12px rgba(207, 207, 207, 0.13), 0px 0px 12px rgba(198, 198, 198, 0.09);
     transition:
         background-color 0.4s cubic-bezier(.4,0,.2,1),
         color 0.4s cubic-bezier(.4,0,.2,1),
         transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+#eink_card{
+    max-width: 800px;
+    margin: 8px 12px;
+    border-radius: 14px;
+    transition:
+        transform 0.4s ease-in-out,
+        box-shadow 0.4s ease-in-out;
+    overflow: hidden;
+    display: block;
+    line-height: 0;
 }
 
 #tds_card_fold1{

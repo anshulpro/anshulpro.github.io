@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Low Power eInk Display</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favicon code -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/images/favicon/site.webmanifest">
+
+        <!-- google font files -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="einkCalendar_style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" integrity="sha512-0aPQyyeZrWj9sCA46UlmWgKOP0mUipLQ6OZXu8l4IcAmD2u31EPEy9VcIMvl7SoAaKe8bLXZhYoMaE/in+gcgA==" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous"></script>
+        <script src="code_data.js"></script>
+        <script src="code_data_ino.js"></script>
+
+        <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+            }
+        }
+        </script>
+
+    </head>
+    <body>
+        <section>
+            <button onclick="history.length > 1 ? history.back() : window.location.href = '/'" id="go_back_button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20.0005 11H6.83047L9.71047 8.11998C10.1005 7.72998 10.1005 7.09998 9.71047 6.70998C9.32047 6.31998 8.69047 6.31998 8.30047 6.70998L3.71047 11.3C3.32047 11.69 3.32047 12.32 3.71047 12.71L8.30047 17.3C8.69047 17.69 9.32047 17.69 9.71047 17.3C10.1005 16.91 10.1005 16.28 9.71047 15.89L6.83047 13H20.0005C20.5505 13 21.0005 12.55 21.0005 12C21.0005 11.45 20.5505 11 20.0005 11Z" fill="black"/>
+                </svg>
+                Go back</button>
+            <h1>Low Power eInk Display</h1>
+            <h2>Experimental DIY Project, Oct 2026</h2>
+            <br/>
+            <h3>What is this ?</h3>
+            <h4>A wall e-Ink display that can render anything (currently Calendar) for days/weeks and updates very infrequently via my home WiFi.</h4>
+        </section>
+
+        <figure class='picture-full-width'>
+            <img
+                src="einkCal_thumbnail.png"
+                alt="eInk Calendar showing current date and upcoming events on a 4 inch display"
+                loading="lazy"
+            />
+            <figcaption>
+                finished project on my desk
+            </figcaption>
+        </figure>
+
+        <section>
+            <h3>What I wanted (a rough idea)?</h3>
+            <ul>
+                <li>Build a sort of setup that I can experiment on eInk displays</li>
+                <li>Going end to end - Build the case, assembling parts, designing UI and tinkering with setup</li>
+                <li>An good excuse to work with ESP32 micro-controller</li>
+            </ul>
+            <br/>
+            <h3>How does it work? (for Calendar v1.0)</h3>
+            <ul>
+                <li>ESP32 wakes from deep sleep once a day (just after midnight) via internal timer</li>
+                <li>Fetches current date from a lightweight local server</li>
+                <li>Renders the layout to the eInk display, then goes back to sleep</li>
+                <li>Full refresh takes ~10/20 seconds; battery lasts several weeks (still testing) on a single charge</li>
+            </ul>
+            <br/>
+        </section>
+
+        <h3 class="section-label">Project Steps</h3>
+
+        <!-- Step 1 -->
+        <section>
+            <h3>Step 1 : Getting parts</h3>
+            <h4>Getting all the components to set the constraints ahead and based on this everything is build around.</h4>
+            <ol class="list-decimal" >
+                <li>ESP32 eink Display Driver Board<a class="view-link" href="https://www.waveshare.com/product/displays/e-paper/driver-boards/e-paper-esp32-driver-board.htm" target="_blank">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
+                <li>5.83 inch eInk display (Red/Yellow/Black/White) <a class="view-link" href="https://www.waveshare.com/5.83inch-e-paper-g.htm?sku=32788" target="_blank">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
+                <li>18650 LiPo battery - x1 <a class="view-link" href="https://robu.in/product/18650-battery-holder-development-board-compatible-with-raspberry-pi3b-3b/" target="_blank">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
+                <li>Single 18650 battery board (for charging and 3.3v DC supply to ESP32) <a class="view-link" href="https://robu.in/product/samsung-inr18650-25r-2500mah-li-ion-battery/" target="_blank">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
+                <li>38-Pin ESP32 Expansion Board (for seating EPS32 board and have easy access to all pins for future prototyping) <a class="view-link" href="https://www.amazon.in/dp/B0HLHCS6WT?ref=ppx_yo2ov_dt_b_fed_asin_title" target="_blank">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
+            </ol>
+        </section>
+
+        <!-- Step 2 -->
+        <section>
+            <h3>Step 2 : Designing the enclosure</h3>
+            <h4>The enclosure was designed with 3 parts — the front panel, the main (back panel) and the back cover. Post designing I exported the 3 objects in .STL format for 3D printing.</h4>
+        </section>
+
+        <figure class='picture-full-width'>
+            <img
+                src="onshape_screenshot.png"
+                alt="Assembly of 3 components in Onshape CAD"
+                loading="lazy"
+            />
+            <figcaption>
+                Assembly of 3 components in the onshape (CAD). The black one is the 5.83" display, which I designed just for reference.
+            </figcaption>
+        </figure>
+
+        <figcaption>Drag the 3D model to rotate. Scroll to zoom in and out.</figcaption>
+        <div class="stl-grid">
+            <div class="stl-card">
+                <div class="stl-canvas-wrap" id="stl-viewer-1"></div>
+                <p class="stl-label">Display Panel</p>
+            </div>
+            <div class="stl-card">
+                <div class="stl-canvas-wrap" id="stl-viewer-2"></div>
+                <p class="stl-label">Back Panel</p>
+            </div>
+            <div class="stl-card">
+                <div class="stl-canvas-wrap" id="stl-viewer-3"></div>
+                <p class="stl-label">Back Panel Cover</p>
+            </div>
+        </div>
+
+
+        <!-- Step 3 -->
+        <section>
+            <h3>Step 3 : 3D printing</h3>
+            <h4>For 3D printing, I used my Bambu Lab A1 with a matt black PLA filament. I modified (from the default settings) and added 5mm brim on the outer edges since few test prints had shrinkage on corners. (will add Timelapse video next time 😎)</h4>
+        </section>
+        <figure class='picture-full-width'>
+            <img
+                src="bambu_A1.png"
+                alt="3D printed parts on Bambu Lab A1"
+                loading="lazy"
+            />
+        </figure>
+
+        <!-- Step 4 -->
+        <section>
+            <h3>Step 4 : Assembly of components</h3>
+            <h4>This is the most exiting step and all past hard-work comes together. </h4>
+            <ol>
+                <li>Cleaned up 3D printed parts from the printer bed and deburred the edges.</li>
+                <li>Added brass inserts (M2.5x3x3) on the front panel and rear cover using soldering iron.</li>
+                <li>Added small magnets (x6) (6x3mm) to the rear back plate and the middle back panel(easy access to boards).</li>
+                <li>M2.5 screws to hold the front and middle panels, EPS32 board and power board.</li>
+                <li>Added 3.3V headers to the power board and connected the ESP board to power it directly.</li>
+            </ol>
+        </section>
+
+        <div class="carousel">
+            <div class="carousel-track" id="assembly-track">
+                <img src="internal_1.jpg" alt="Internal assembly view 1" loading="lazy">
+                <img src="internal_2.jpg" alt="Internal assembly view 2" loading="lazy">
+            </div>
+            <button class="carousel-arrow carousel-arrow-prev" onclick="goToSlide(0)" aria-label="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="carousel-arrow carousel-arrow-next" onclick="goToSlide(1)" aria-label="Next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+
+        <!-- Step 5 -->
+        <section>
+            <h3>Step 5 : UI Design</h3>
+            <h4>Designed a simple layout in Figma with 480 x 648px resolution frame and using a single monospace font -  Noto Sans Mono Bold</h4>
+        </section>
+
+        <figure class='picture-full-width'>
+            <img
+                src="Figma_UI.png"
+                alt="Figma UI design for eInk display"
+                loading="lazy"
+            />
+        </figure>
+
+        <!-- Step 6 -->
+        <section>
+            <h3>Step 6 : Testing and Uploading the code</h3>
+            <h4>Once the hardware was set, I booted up the Arduino IDE and installed all the dependencies to connect to the ESP32 board using USB-C. Post demo code that was given with the board, I fired-up Claude Code and handed the UI design for it to plan ahead.</h4>
+            <br>
+            <h4>Only step before final sketch upload was to convert the font file (.ttf) into the C++ header library file(.h ) using the below python script.</h4>
+        </section>
+
+        <div class="code-block" id="code-viewer">
+            <div class="code-block-header">
+                <div class="code-tab">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3d8af7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span class="code-block-label">make_calendar_fonts.py</span>
+                </div>
+                <button class="code-copy-btn" id="copy-btn" onclick="copyCode()">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    Copy
+                </button>
+            </div>
+            <div class="code-body">
+                <pre><code class="language-python" id="code-content"></code></pre>
+            </div>
+        </div>
+
+        <figure class='picture-full-width'>
+            <img
+                src="Arduino_IDE.jpg"
+                alt="Arduino IDE with eInk display code"
+                loading="lazy"
+            />
+            <figcaption>Arduino IDE with final sketch "Calendar.ino" along with all the required files in same folder.</figcaption>
+        </figure>
+
+        <section>
+            <h4>Once the font file was generated (CalFonts.h), compiled and uploaded the sketch to the ESP32 and flash - the e-Ink came to life. Voila !</h4>
+        </section>
+        
+        <div class="code-block" id="code-viewer-ino">
+            <div class="code-block-header">
+                <div class="code-tab">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3d8af7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span class="code-block-label">Calendar.ino</span>
+                </div>
+                <button class="code-copy-btn" id="copy-btn-ino" onclick="copyCodeIno()">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    Copy
+                </button>
+            </div>
+            <div class="code-body">
+                <pre><code class="language-cpp" id="code-content-ino"></code></pre>
+            </div>
+        </div>
+
+        <section>
+            <h3>Learnings:</h3>
+            <h4>A lot, while building this project, I was constantly thinking on what I will do next time to make this better.</h4> 
+            <br/> 
+            <h4>Some of the thoughts that crossed my mind:</h4>
+            <ul>
+                <li>The front surface of the panel is textured due to the Textured PEI plate, might choose a smooth one to have a much better texture.</li>
+                <li>I did not optimize the parts for 3D printing, I could sense that and wasted lot of filament (on auto supports) and time while printing.</li>
+                <li>Tolerances (the panel is bit loose on the frame as I gave around 2mm clearance) are something I need to pay more attention to in future projects for a better fit.</li>
+                <li>The Frame is bit thick on the back due to both the battery and the esp32 board (with extension) taking a lot of height; a flat battery with thinner profile and a 90-degree pin headers for ESP32 might make the profile slim.</li>
+                <li>This e-Ink display does not support partial-refresh, which limits it ability to show high frequency updates like clock-time, temperature (from a sensor) that can be updated without a full refresh.</li>
+                <li>For brass heat inserts, I used a soldering iron with conical tip. Not ideal and sustainable approach. Also the inserts were for injection moulding not for 3d prints.</li>
+                <li>Using USB breakout boards that allow connecting the internals boards for debugging and charging battery. Also LED displays to show the status just near to the ports.</li>
+                <li>More experimentation on the UI - adding SVG icons, small images, fancy borders...</li>
+            </ul>
+        </section>
+
+        <script>
+            let rawCode = '';
+            let rawCodeIno = '';
+
+            function renderCodeViewer(rawSrc, elId, language) {
+                const el = document.getElementById(elId);
+                const lines = rawSrc.split('\n');
+                el.innerHTML = lines.map((line, i) => {
+                    const highlighted = hljs.highlight(line === '' ? ' ' : line, { language }).value;
+                    return `<span class="code-line"><span class="ln">${i + 1}</span>${highlighted}</span>`;
+                }).join('\n');
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                rawCode = window.CALENDAR_CODE;
+                renderCodeViewer(rawCode, 'code-content', 'python');
+
+                rawCodeIno = window.CALENDAR_INO;
+                renderCodeViewer(rawCodeIno, 'code-content-ino', 'cpp');
+            });
+
+            function copyCode() {
+                const btn = document.getElementById('copy-btn');
+                navigator.clipboard.writeText(rawCode).then(() => {
+                    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+                    setTimeout(() => {
+                        btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+                    }, 2000);
+                });
+            }
+
+            function copyCodeIno() {
+                const btn = document.getElementById('copy-btn-ino');
+                navigator.clipboard.writeText(rawCodeIno).then(() => {
+                    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+                    setTimeout(() => {
+                        btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+                    }, 2000);
+                });
+            }
+        </script>
+
+        <script>
+            let currentSlide = 0;
+            const totalSlides = 2;
+            function goToSlide(index) {
+                currentSlide = index;
+                document.getElementById('assembly-track').style.transform = `translateX(-${index * 100}%)`;
+                document.querySelector('.carousel-arrow-prev').style.opacity = index === 0 ? '0.3' : '1';
+                document.querySelector('.carousel-arrow-next').style.opacity = index === totalSlides - 1 ? '0.3' : '1';
+            }
+            document.querySelector('.carousel-arrow-prev').style.opacity = '0.3';
+        </script>
+
+        <script type="module">
+            import * as THREE from 'three';
+            import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+            import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+            const viewers = [
+                { id: 'stl-viewer-1', file: 'display_panel_v3.stl' },
+                { id: 'stl-viewer-2', file: 'back_panel_v1.stl' },
+                { id: 'stl-viewer-3', file: 'back_panel_cover_v1.stl' },
+            ];
+
+            function createViewer({ id, file }) {
+                const container = document.getElementById(id);
+
+                const scene = new THREE.Scene();
+                scene.background = new THREE.Color(0xf0f0f0);
+
+                const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 2000);
+
+                const renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setPixelRatio(window.devicePixelRatio);
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                container.appendChild(renderer.domElement);
+
+                const ambient = new THREE.AmbientLight(0xffffff, 0.7);
+                scene.add(ambient);
+                const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
+                keyLight.position.set(5, 10, 7);
+                scene.add(keyLight);
+                const fillLight = new THREE.DirectionalLight(0xffffff, 0.4);
+                fillLight.position.set(-5, -5, -5);
+                scene.add(fillLight);
+
+                const controls = new OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.06;
+
+                const loader = new STLLoader();
+                loader.load(file, (geometry) => {
+                    geometry.computeBoundingBox();
+                    const bbox = geometry.boundingBox;
+
+                    const center = new THREE.Vector3();
+                    bbox.getCenter(center);
+                    geometry.translate(-center.x, -center.y, -center.z);
+
+                    const size = new THREE.Vector3();
+                    bbox.getSize(size);
+                    const maxDim = Math.max(size.x, size.y, size.z);
+                    const fitScale = 3 / maxDim;
+
+                    const material = new THREE.MeshPhongMaterial({
+                        color: 0x3a3a3a,
+                        specular: 0x222222,
+                        shininess: 30,
+                    });
+                    const mesh = new THREE.Mesh(geometry, material);
+                    mesh.scale.setScalar(fitScale);
+                    scene.add(mesh);
+
+                    camera.position.set(0, 2, 6);
+                    camera.lookAt(0, 0, 0);
+                    controls.update();
+                });
+
+                function animate() {
+                    requestAnimationFrame(animate);
+                    controls.update();
+                    renderer.render(scene, camera);
+                }
+                animate();
+
+                new ResizeObserver(() => {
+                    const w = container.clientWidth;
+                    const h = container.clientHeight;
+                    camera.aspect = w / h;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(w, h);
+                }).observe(container);
+            }
+
+            viewers.forEach(createViewer);
+        </script>
+
+    </body>
+</html>
