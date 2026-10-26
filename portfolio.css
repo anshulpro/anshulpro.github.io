@@ -278,7 +278,7 @@ body{
 
 #eink_card{
     max-width: 800px;
-    margin: 8px 12px;
+    margin: 8px 0px;
     border-radius: 14px;
     transition:
         transform 0.4s ease-in-out,
