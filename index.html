@@ -27,6 +27,78 @@
 
         <!-- JS file for scripting -->
         <script defer src="logic.js"></script>
+
+        <!-- Structured data for crawlers / AI agents -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Person",
+                    "@id": "https://anshulpro.github.io/#person",
+                    "name": "Anshul Singh",
+                    "url": "https://anshulpro.github.io/",
+                    "image": "https://anshulpro.github.io/assets/profile_pic.png",
+                    "jobTitle": "Product Designer",
+                    "email": "mailto:anshulpro@gmail.com",
+                    "knowsAbout": ["Product Design", "Design Systems", "Accessibility", "Prototyping", "HTML", "CSS", "JavaScript", "React"],
+                    "sameAs": [
+                        "https://www.linkedin.com/in/anshulpro/",
+                        "https://github.com/anshulpro",
+                        "https://medium.com/@anshulpro"
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://anshulpro.github.io/#website",
+                    "url": "https://anshulpro.github.io/",
+                    "name": "Anshul Singh",
+                    "description": "Personal portfolio of Anshul Singh — Product Designer. Work case studies, design system, side projects, and apps.",
+                    "author": { "@id": "https://anshulpro.github.io/#person" },
+                    "inLanguage": "en"
+                },
+                {
+                    "@type": "ItemList",
+                    "name": "Projects",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "item": {
+                                "@type": "CreativeWork",
+                                "name": "tinyDesignSystem",
+                                "description": "A design system documented and built using React JS, WCAG AA conformant, cross-browser.",
+                                "url": "https://tinydesignsystem.in/",
+                                "author": { "@id": "https://anshulpro.github.io/#person" }
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "item": {
+                                "@type": "CreativeWork",
+                                "name": "Timesheet — Keka Mobile",
+                                "description": "Research and design of the Timesheet feature on the Keka Mobile app.",
+                                "url": "https://anshulpro.github.io/other/Timesheet/timesheet.html",
+                                "author": { "@id": "https://anshulpro.github.io/#person" }
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "item": {
+                                "@type": "CreativeWork",
+                                "name": "Low Power eInk Display",
+                                "description": "DIY always-on eInk calendar display — hardware, firmware, and enclosure.",
+                                "url": "https://anshulpro.github.io/other/einkCalendar/einkCalendar.html",
+                                "author": { "@id": "https://anshulpro.github.io/#person" }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+        </script>
     </head>
    
     <body class="flex flex-col">
