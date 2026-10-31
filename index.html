@@ -34,7 +34,7 @@
         <!--Introduction-->
         <header class="flex flex-row p-3 font-normal font-text mt-4 max-w-xl mx-5 self-center">
             <div class="flex-none mt-4">
-                <img class="rounded-sm" style="height: 130px" src="assets/profile_pic.png" alt="Portrait of Anshul Singh">
+                <img class="rounded-sm" width="130" height="130" fetchpriority="high" decoding="async" style="height: 130px; width: 130px" src="assets/profile_pic.png" alt="Portrait of Anshul Singh">
             </div>
             <div class="flex flex-col ml-4 leading-none" style="position: relative;">
                 <div id="hello_container">
@@ -85,12 +85,14 @@
                 target="_blank" rel="noopener noreferrer">
 
                 <div id="tds_card_fold1">
-                    <img 
-                        id="tds_logo" 
+                    <img
+                        id="tds_logo"
+                        width="146" height="94"
                         alt="tiny design system logo"
                         src="/images/tDS_logo.png">
-                    <img 
-                        id="tds_banner" 
+                    <img
+                        id="tds_banner"
+                        width="840" height="420"
                         alt="design system banner"
                         src="/images/DS_banner2.jpg">
                 </div>
@@ -101,8 +103,9 @@
                     </div>
                     <p id="tds_desc_text">design documentation of my own Design System built using React JS</p>
                     <div class="flex justify-between h-8">
-                        <img 
-                            src="/images/WCAG_AA_badge.png" 
+                        <img
+                            src="/images/WCAG_AA_badge.png"
+                            width="91" height="32"
                             alt="Web Content Accessibility Guidelines badge for AA or medium level of conformance"
                             class="block h-8 flex">
                         <div id="tds_browser_stack">
@@ -121,8 +124,10 @@
                 href="/other/Timesheet/timesheet.html">
 
                 <div id="timesheet_card_fold1">
-                    <img 
-                        id="timesheet_image" 
+                    <img
+                        id="timesheet_image"
+                        width="878" height="404"
+                        loading="lazy" decoding="async"
                         alt="timesheet card banner"
                         src="/images/timesheet_image.jpg">
                 </div>
@@ -188,28 +193,28 @@
                     <!-- calculate now -->
                     <div class="flex flex-col mr-6 justify-center items-center shrink-0 mt-4">
                         <a target="_blank" rel="noopener noreferrer" href="/other/Embedded Calculator/calculate_now.html">
-                            <img class="app_icon shrink-0" src="/other/Embedded Calculator/calculate_now.png"> 
+                            <img class="app_icon shrink-0" width="80" height="80" loading="lazy" decoding="async" alt="" src="/other/Embedded Calculator/calculate_now.png">
                             <div class="text-xs text-gray-700 text-center mt-1 font-medium">Calculate Now</div>
                         </a>
                     </div>
                     <!-- Battleship Game -->
                     <div class="flex flex-col mr-4 justify-center items-center shrink-0 mt-4">
                         <a target="_blank" rel="noopener noreferrer" href="/other/Battleship Game/battleship.html">
-                            <img class="app_icon" src="/other/Battleship Game/battleship_icon.jpg"> 
+                            <img class="app_icon" width="80" height="80" loading="lazy" decoding="async" alt="" src="/other/Battleship Game/battleship_icon.jpg">
                             <div class="text-xs text-gray-700 text-center mt-1 font-medium">Battleship</div>
                         </a>
                     </div>
                     <!-- Wordle Game -->
                     <div class="flex flex-col mr-4 justify-center items-center shrink-0 mt-4">
                         <a target="_blank" rel="noopener noreferrer" href="/other/Wordle/Wordle.html">
-                            <img class="app_icon" src="/other/Wordle/Wordle_icon.png"> 
+                            <img class="app_icon" width="80" height="80" loading="lazy" decoding="async" alt="" src="/other/Wordle/Wordle_icon.png">
                             <div class="text-xs text-gray-700 text-center mt-1 font-medium">Wordle</div>
                         </a>
                     </div>
                     <!-- virtual keyboard -->
                     <div class="flex flex-col mr-4 justify-center items-center shrink-0 mt-4">
                         <a target="_blank" rel="noopener noreferrer" href="/other/Virtual Keyboard/vc.html">
-                            <img class="app_icon" src="/other/Virtual Keyboard/virtual_keyboard.png"> 
+                            <img class="app_icon" width="80" height="80" loading="lazy" decoding="async" alt="" src="/other/Virtual Keyboard/virtual_keyboard.png">
                             <div class="text-xs text-gray-700 text-center mt-1 font-medium">Virtual Keys</div>
                         </a>
                     </div>
@@ -219,7 +224,7 @@
             <!--eInk Calendar-->
             <div class="mx-3 card_800 text-gray-900 text-sm font-bold mt-2 mb-1">DIY Projects</div>
             <a id="eink_card" href="/other/einkCalendar/einkCalendar.html">
-                <img class="w-full" src="/other/einkCalendar/einkCal_thumbnail.png" alt="low power eink display - Anshul Singh">
+                <img class="w-full" width="972" height="620" loading="lazy" decoding="async" src="/other/einkCalendar/einkCal_thumbnail.png" alt="low power eink display - Anshul Singh">
             </a>
 
             <!--Articles on web-->
@@ -245,7 +250,7 @@
             <!--Gaming-->
             <div class="mx-3 bg-gray-100 p-5 rounded my-2 card_800">
                 <div class="text-gray-900 text-sm font-bold mb-1">Gaming
-                    <img class="mb-2 mt-2" src="/images/games_desktop.jpg" alt="Collage of game cover art">
+                    <img class="mb-2 mt-2" width="1520" height="960" loading="lazy" decoding="async" src="/images/games_desktop.jpg" alt="Collage of game cover art">
                     <ul class="list-disc ml-4 text-xs text-gray-800 font-normal">
                         <li><em>Horizon Zero Dawn</em> - Brilliant Graphics, beautiful story that combines everthying (Man + machine + AI + Earth)</li>
                         <li><em>Detroit : Become Human </em> - A short but interactive game werein your actions drive the story forward. Good storyline, user interface is too good to ignore, esp. when you rebuild a scenario from a crime scene. </li>
@@ -260,7 +265,7 @@
                 <div class="text-gray-900 text-sm font-bold mb-1">3D Printing
                     <div class="text-xs text-gray-800 mb-2 font-normal">Recently added a 3D Printer and started tinkering around it to print anything...</div>
                 </div>
-                <img class="mt-2 mb-2" src="/images/3d_printer.jpg" alt="My Bambu Lab A1 3D printer">
+                <img class="mt-2 mb-2" width="1520" height="892" loading="lazy" decoding="async" src="/images/3d_printer.jpg" alt="My Bambu Lab A1 3D printer">
             </div>
             
             <!--Sports-->
