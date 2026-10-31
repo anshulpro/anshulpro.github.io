@@ -5,6 +5,8 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://covers.openlibrary.org https://archive.org https://*.archive.org; object-src 'none'; base-uri 'self'; form-action 'self'">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Anshul Singh</title>
         <meta name="description" content="Personal Website">
@@ -24,43 +26,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@700&display=swap" rel="stylesheet">
 
         <!-- JS file for scripting -->
-        <script>
-            //function for hello animation and delay, added at the start delibrately
-            // this lovely hello animation is by Toshiyuki TAKAHASHI, https://codepen.io/gau
-            document.addEventListener('DOMContentLoaded',function(){
-                animationStart();
-            });
-            const animationStart = () => {
-                document.getElementById('hello_container').classList.add('fin');
-            }
-            setTimeout(animationStart, 150);
-
-            //function for a header tab to make active... 
-            function make_tab_active(temp)
-            {
-                if(temp == "work_tab")
-                {
-                    document.getElementById("work_container").style.display = "flex";
-                    document.getElementById("work_tab").classList = "tab_active";
-                    
-                    document.getElementById("afterwork_container").style.display = "none";
-                    document.getElementById("afterwork_tab").classList = "tab_inactive"; 
-                    
-                }
-                else if(temp == "afterwork_tab")
-                {
-                    document.getElementById("afterwork_container").style.display = "flex";
-                    document.getElementById("afterwork_tab").classList = "tab_active";
-                    
-                    document.getElementById("work_container").style.display = "none";
-                    document.getElementById("work_tab").classList = "tab_inactive";
-                }
-            }
-        </script>
         <script defer src="logic.js"></script>
-        
-        <!--Analytics-->
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="77f3f6bf-d1f4-4c2b-8564-6b3d7f1f3298"></script>
     </head>
    
     <body class="disable-select flex flex-col"> 
@@ -83,10 +49,10 @@
                 
                 
                 <div class="flex flex-row items-center mt-2 ml-4">
-                    <!-- <a title="Twitter" target="_blank" class="button_twitter mr-2" href="https://twitter.com/anshulpro"><img class="h-4 w-4" src="assets/twitter.svg"></a> -->
-                    <a title="Linkedin" target="_blank" class="button_linkedin mr-2" href="https://www.linkedin.com/in/anshulpro/"><img class="h-4 w-4" src="assets/linkedin.svg"></a>
-                    <a title="Github" target="_blank" class="button_github mr-2" href="https://github.com/anshulpro"><img class="h-4 w-4" src="assets/github.svg"></a>
-                    <a title="View my latest Resume" target="_blank" class="button_resume hover:bg-gray-200" href="./documents/Anshul_Singh_DD.pdf">
+                    <!-- <a title="Twitter" target="_blank" rel="noopener noreferrer" class="button_twitter mr-2" href="https://twitter.com/anshulpro"><img class="h-4 w-4" src="assets/twitter.svg"></a> -->
+                    <a title="Linkedin" target="_blank" rel="noopener noreferrer" class="button_linkedin mr-2" href="https://www.linkedin.com/in/anshulpro/"><img class="h-4 w-4" src="assets/linkedin.svg"></a>
+                    <a title="Github" target="_blank" rel="noopener noreferrer" class="button_github mr-2" href="https://github.com/anshulpro"><img class="h-4 w-4" src="assets/github.svg"></a>
+                    <a title="View my latest Resume" target="_blank" rel="noopener noreferrer" class="button_resume hover:bg-gray-200" href="./documents/Anshul_Singh_DD.pdf">
                         <div class="font_inter text-xs text-blue-500"><b>Resume</b></div>
                         <img class="h-3 w-3 ml-1" src="assets/icon_external_link.svg">
                     </a>
@@ -96,11 +62,11 @@
         
         <!--Navigation switch-->
         <div id="nav_parent">
-            <div id="work_tab" title="What I do on weekdays" class="tab_active" onclick="make_tab_active('work_tab')">
+            <div id="work_tab" title="What I do on weekdays" class="tab_active">
                 <img src="/images/badge_24px.png">
                 Work
             </div>
-            <div id="afterwork_tab" title="What I do post work and on weekends" class="tab_inactive" onclick="make_tab_active('afterwork_tab')">
+            <div id="afterwork_tab" title="What I do post work and on weekends" class="tab_inactive">
                 <img src="/images/toy_train_24px.png">
                 After Work
             </div>
@@ -116,7 +82,7 @@
             <!-- tDS card -->            
             <a id="tds_card" 
                 href="https://tinydesignsystem.in/" 
-                target="_blank">
+                target="_blank" rel="noopener noreferrer">
 
                 <div id="tds_card_fold1">
                     <img 
@@ -185,24 +151,24 @@
                 <p class="text-gray-700 text-sm mb-4 italic">few of my old Design works</p>
                 <div id="old_work_container" class="text-gray-700">
                     <ul class="list-disc ml-4">
-                        <li class="mb-2"><div class="font-semibold">Service request tracker - Mobile app <a target="_blank" class="text-blue-500 pl-2" href="/documents/Water Purifier - Anshul Singh.pdf">
+                        <li class="mb-2"><div class="font-semibold">Service request tracker - Mobile app <a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="/documents/Water Purifier - Anshul Singh.pdf">
                             View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
                             </a>
                             </div>Water purifier owners can manage (raise, track, close) service requests; also cross-selling other products manufactured by the company - Demo Work (~ 2 days) 
                         </li> 
-                        <li class="mb-2"><div class="font-semibold">Technician - A day at work <a target="_blank" class="text-blue-500 pl-2" href="/documents/A Day at Work - Technician.pdf">
+                        <li class="mb-2"><div class="font-semibold">Technician - A day at work <a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="/documents/A Day at Work - Technician.pdf">
                             View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
                             </a>
                             </div>One of the user journey for a Technician that shows how his typical day might look like. He manages all his work (the work orders assigned to him) via a digital tablet. 
                         </li> 
-                        <li class="mb-2"><div class="font-semibold">Email Template - Pre & Post Health Check <a target="_blank" class="text-blue-500 pl-2" href="https://htmlpreview.github.io/?https://github.com/anshulpro/Health-Check-Template/blob/master/html_mailer_health_check_2.html">
+                        <li class="mb-2"><div class="font-semibold">Email Template - Pre & Post Health Check <a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="https://htmlpreview.github.io/?https://github.com/anshulpro/Health-Check-Template/blob/master/html_mailer_health_check_2.html">
                             View Prototype<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
-                            </a><a target="_blank" class="text-blue-500 pl-2" href="https://www.figma.com/file/MGdmxMxaJiwRLvHV2NPERJhq/Book-Appointment-Mailer?node-id=0%3A1">
+                            </a><a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="https://www.figma.com/file/MGdmxMxaJiwRLvHV2NPERJhq/Book-Appointment-Mailer?node-id=0%3A1">
                             View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
                             </a>
                             </div>These email template were used by the backend developer; code triggers these emails along with notifications to users based on Health Check stages.
                         </li> 
-                        <li class="mb-2"><div class="font-semibold">Assign Crew Members to a Work Order - Web app | Dekstop <a target="_blank" class="text-blue-500 pl-2" href="/documents/Assign%20Crew%20Members%20to%20WO%20-%20Anshul%20Singh.pdf">
+                        <li class="mb-2"><div class="font-semibold">Assign Crew Members to a Work Order - Web app | Dekstop <a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="/documents/Assign%20Crew%20Members%20to%20WO%20-%20Anshul%20Singh.pdf">
                             View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
                             </a>
                             </div>A Supervisor assigns a technician for each operation in a Work Order that is already created. Before proposing such a design it was done from the default SAP application (the backend). Design aimed to improve supervisor productivity, reduce error in assignment and easy to use. 
@@ -221,28 +187,28 @@
                 <div class="flex grid gap-4 flex-wrap">
                     <!-- calculate now -->
                     <div class="flex flex-col mr-6 justify-center items-center shrink-0 mt-4">
-                        <a target="_blank" href="/other/Embedded Calculator/calculate_now.html">
+                        <a target="_blank" rel="noopener noreferrer" href="/other/Embedded Calculator/calculate_now.html">
                             <img class="app_icon shrink-0" src="/other/Embedded Calculator/calculate_now.png"> 
                             <div class="text-xs text-gray-700 text-center mt-1 font-medium">Calculate Now</div>
                         </a>
                     </div>
                     <!-- Battleship Game -->
                     <div class="flex flex-col mr-4 justify-center items-center shrink-0 mt-4">
-                        <a target="_blank" href="/other/Battleship Game/battleship.html">
+                        <a target="_blank" rel="noopener noreferrer" href="/other/Battleship Game/battleship.html">
                             <img class="app_icon" src="/other/Battleship Game/battleship_icon.jpg"> 
                             <div class="text-xs text-gray-700 text-center mt-1 font-medium">Battleship</div>
                         </a>
                     </div>
                     <!-- Wordle Game -->
                     <div class="flex flex-col mr-4 justify-center items-center shrink-0 mt-4">
-                        <a target="_blank" href="/other/Wordle/Wordle.html">
+                        <a target="_blank" rel="noopener noreferrer" href="/other/Wordle/Wordle.html">
                             <img class="app_icon" src="/other/Wordle/Wordle_icon.png"> 
                             <div class="text-xs text-gray-700 text-center mt-1 font-medium">Wordle</div>
                         </a>
                     </div>
                     <!-- virtual keyboard -->
                     <div class="flex flex-col mr-4 justify-center items-center shrink-0 mt-4">
-                        <a target="_blank" href="/other/Virtual Keyboard/vc.html">
+                        <a target="_blank" rel="noopener noreferrer" href="/other/Virtual Keyboard/vc.html">
                             <img class="app_icon" src="/other/Virtual Keyboard/virtual_keyboard.png"> 
                             <div class="text-xs text-gray-700 text-center mt-1 font-medium">Virtual Keys</div>
                         </a>

@@ -6,6 +6,50 @@ const primaryDisplayId = document.getElementById("display_screen_text_primary");
 
 let isEqualsToPressed = false;
 
+//safe arithmetic evaluator for the restricted calculator grammar: digits, '.', + - * /
+//returns a finite Number on success, or null on invalid expression / divide-by-zero
+function safeEvaluate(expr) {
+    if (typeof expr !== 'string' || !/^[\d+\-*/.]+$/.test(expr)) return null;
+
+    const tokens = [];
+    let numBuffer = '';
+    for (const ch of expr) {
+        if (ch >= '0' && ch <= '9' || ch === '.') {
+            numBuffer += ch;
+        } else {
+            if (numBuffer === '') return null;
+            const n = Number(numBuffer);
+            if (!isFinite(n)) return null;
+            tokens.push(n, ch);
+            numBuffer = '';
+        }
+    }
+    if (numBuffer === '') return null;
+    const tail = Number(numBuffer);
+    if (!isFinite(tail)) return null;
+    tokens.push(tail);
+
+    for (let i = 1; i < tokens.length; i += 2) {
+        const op = tokens[i];
+        if (op === '*' || op === '/') {
+            const a = tokens[i - 1], b = tokens[i + 1];
+            const r = op === '*' ? a * b : a / b;
+            tokens.splice(i - 1, 3, r);
+            i -= 2;
+        }
+    }
+
+    let result = tokens[0];
+    for (let i = 1; i < tokens.length; i += 2) {
+        const op = tokens[i], b = tokens[i + 1];
+        if (op === '+') result += b;
+        else if (op === '-') result -= b;
+        else return null;
+    }
+
+    return isFinite(result) ? result : null;
+}
+
 //function to render the secondary text on the display
 function showSecondaryDisplay() {
     secondaryDisplayId.textContent = secondaryDisplayString || "0";
@@ -75,8 +119,11 @@ document.onkeydown = (event) => {
         //equalTo button
         else if(event.key == "="){
             if(/[+\-*/]/.test(secondaryDisplayString)){
-                primaryDisplayString = eval(secondaryDisplayString).toFixed(2);
-                showPrimaryDisplay();
+                const result = safeEvaluate(secondaryDisplayString);
+                if (result !== null) {
+                    primaryDisplayString = result.toFixed(2);
+                    showPrimaryDisplay();
+                }
             }
         }
 
@@ -140,12 +187,15 @@ const equalsTo = document.getElementById('equalsTo');
 equalsTo.onclick = () => {
     //check if the there is an operator included or not
     if(/[+\-*/]/.test(secondaryDisplayString)){
-        primaryDisplayString = eval(secondaryDisplayString);
-        if(Number(primaryDisplayString) % 1 !==0){
-            primaryDisplayString = String(Number(primaryDisplayString).toFixed(2));
+        const result = safeEvaluate(secondaryDisplayString);
+        if (result !== null) {
+            primaryDisplayString = result;
+            if(Number(primaryDisplayString) % 1 !==0){
+                primaryDisplayString = String(Number(primaryDisplayString).toFixed(2));
+            }
+            showPrimaryDisplay();
         }
-        showPrimaryDisplay();
-    } 
+    }
     //last step would be to use the commas properly to show the evaluated sum
 }
 
@@ -156,9 +206,9 @@ const saveCurrentCalculationButton = document.getElementById('save_current_calcu
 saveCurrentCalculationButton.onclick = () => {
     //when equalstobutton is pressed atleast once
     if(isEqualsToPressed == true && secondaryDisplayString !=="" && primaryDisplayString !==""){
-        calculationHistoryParent.insertAdjacentHTML('afterbegin', `
-            <div class="calculation_history_container">
-                    <div class="calculation_history_item_dropdown"> 
+        //static chrome inserted as HTML; user values set via textContent to prevent HTML injection
+        calculationHistoryParent.insertAdjacentHTML('afterbegin', `<div class="calculation_history_container">
+                    <div class="calculation_history_item_dropdown">
                         <button class="three_dot_icon_button"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M19 19.75C19 18.9216 19.6716 18.25 20.5 18.25C21.3284 18.25 22 18.9216 22 19.75C22 20.5784 21.3284 21.25 20.5 21.25C19.6716 21.25 19 20.5784 19 19.75Z" fill="black" fill-opacity="0.4"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M19 14.5C19 13.6716 19.6716 13 20.5 13C21.3284 13 22 13.6716 22 14.5C22 15.3284 21.3284 16 20.5 16C19.6716 16 19 15.3284 19 14.5Z" fill="black" fill-opacity="0.4"/>
@@ -171,10 +221,13 @@ saveCurrentCalculationButton.onclick = () => {
                         </div>
                     </div>
                     <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px;">
-                        <div class="calculation_history_text_secondary">${secondaryDisplayString}</div>
-                        <div class="calculation_history_text_primary">${standardStringNotation(primaryDisplayString)}</div>
+                        <div class="calculation_history_text_secondary"></div>
+                        <div class="calculation_history_text_primary"></div>
                     </div>
                 </div>`);
+        const insertedItem = calculationHistoryParent.firstElementChild;
+        insertedItem.querySelector('.calculation_history_text_secondary').textContent = secondaryDisplayString;
+        insertedItem.querySelector('.calculation_history_text_primary').textContent = standardStringNotation(primaryDisplayString);
         secondaryDisplayString = "";
         showSecondaryDisplay();
         primaryDisplayString = "";
