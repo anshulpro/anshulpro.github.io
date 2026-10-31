@@ -1,16 +1,18 @@
 const gridContainer = document.getElementById('gridContainer');
 for(let i=0;i<16;i++){
-    const gridItem = document.createElement('div');
+    const gridItem = document.createElement('button');
+    gridItem.type = 'button';
     gridItem.classList.add('gridItem');
     gridItem.id = i;
+    gridItem.setAttribute('aria-label', `Cell ${i + 1}, hidden`);
     gridContainer.appendChild(gridItem);
 }
 
 
 //on clicking the gridItem an image comes; it can be ship/water;
 //add image of water and ship randomly 5 Ships and 11 water to be filled
-const ship = "https://ik.imagekit.io/d9mvewbju/Course/BigbinaryAcademy/battleship-image_e6bWCZ1w4.png";
-const water = "https://ik.imagekit.io/d9mvewbju/Course/BigbinaryAcademy/seamless-pattern-waves-various-shades-blue-vector-underwater-design-96891651_aSd5pmbaM.webp";
+const ship = "ship.png";
+const water = "water.jpg";
 
 
 //numbers from 0 to 16
@@ -56,11 +58,14 @@ remainingEleven.forEach(id => {
 const gridItemsCollection = document.getElementsByClassName('gridItem');
 const gridItems = Array.from(gridItemsCollection);
 let clickCount = 0;
+const gameStatus = document.getElementById('gameStatus');
 gridItems.forEach(gridItem => {
     gridItem.onclick = () => {
         const img = gridItem.querySelector('img');
         img.style.display = 'flex';
         img.dataset.visible = true;
+        gridItem.setAttribute('aria-label', `Cell ${Number(gridItem.id) + 1}, ${img.alt}`);
+        gridItem.disabled = true;
         gridItem.onclick = null;
         clickCount++;
 
@@ -77,9 +82,11 @@ gridItems.forEach(gridItem => {
 });
 
 const youWon = () => {
+    gameStatus.textContent = "You won! All ships found.";
     alert("You Won!");
 }
 const youLose = () => {
+    gameStatus.textContent = "You lost. Try again.";
     alert("You Lost!");
 }
 

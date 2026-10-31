@@ -28,11 +28,11 @@
             View Details
         </a></p>
     </div>
-    <label id="input_field_parent">Actual Rent Paid * 
+    <label id="input_field_parent" for="input_field">Actual Rent Paid <span aria-label="required">*</span>
         <div class="flex_row">
-            <input id="input_field" type="text" placeholder="0">
-            <span class="currencyPrefix">₹</span>
-            <button id="calculate_button" class="calculate_button_OFF">
+            <input id="input_field" type="text" placeholder="0" required aria-required="true">
+            <span class="currencyPrefix" aria-hidden="true">₹</span>
+            <button type="button" id="calculate_button" class="calculate_button_OFF" aria-label="Toggle calculator" aria-expanded="false" aria-controls="calculate_parent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="">
                     <g clip-path="url(#clip0_3246_115052)">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M5 2.4998C4.53976 2.4998 4.16667 2.87289 4.16667 3.33313V16.6665C4.16667 17.1267 4.53976 17.4998 5 17.4998H15C15.4602 17.4998 15.8333 17.1267 15.8333 16.6665V3.33313C15.8333 2.87289 15.4602 2.4998 15 2.4998H5ZM2.5 3.33313C2.5 1.95242 3.61929 0.83313 5 0.83313H15C16.3807 0.83313 17.5 1.95242 17.5 3.33313V16.6665C17.5 18.0472 16.3807 19.1665 15 19.1665H5C3.61929 19.1665 2.5 18.0472 2.5 16.6665V3.33313Z" fill="#585858"/>
@@ -84,14 +84,14 @@
                 <div id="display_screen">
                     <div id="display_screen_text_secondary"></div>
                     <div id="display_screen_text_primary"></div>
-                    <button id="save_current_calculation_button">
+                    <button type="button" id="save_current_calculation_button" aria-label="Save calculation to history">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M3.33301 2.66634C3.1562 2.66634 2.98663 2.73658 2.8616 2.8616C2.73658 2.98663 2.66634 3.1562 2.66634 3.33301V12.6663C2.66634 12.8432 2.73658 13.0127 2.8616 13.1377C2.98663 13.2628 3.1562 13.333 3.33301 13.333H12.6663C12.8432 13.333 13.0127 13.2628 13.1377 13.1377C13.2628 13.0127 13.333 12.8432 13.333 12.6663V5.60915L10.3902 2.66634H3.33301ZM1.91879 1.91879C2.29387 1.54372 2.80257 1.33301 3.33301 1.33301H10.6663C10.8432 1.33301 11.0127 1.40325 11.1377 1.52827L14.4711 4.8616C14.5961 4.98663 14.6663 5.1562 14.6663 5.33301V12.6663C14.6663 13.1968 14.4556 13.7055 14.0806 14.0806C13.7055 14.4556 13.1968 14.6663 12.6663 14.6663H3.33301C2.80257 14.6663 2.29387 14.4556 1.91879 14.0806C1.54372 13.7055 1.33301 13.1968 1.33301 12.6663V3.33301C1.33301 2.80257 1.54372 2.29387 1.91879 1.91879Z" fill="#0F172A"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 8.66667C4 8.29848 4.29848 8 4.66667 8H11.3333C11.7015 8 12 8.29848 12 8.66667V14C12 14.3682 11.7015 14.6667 11.3333 14.6667C10.9651 14.6667 10.6667 14.3682 10.6667 14V9.33333H5.33333V14C5.33333 14.3682 5.03486 14.6667 4.66667 14.6667C4.29848 14.6667 4 14.3682 4 14V8.66667Z" fill="#0F172A"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M4.66667 1.33301C5.03486 1.33301 5.33333 1.63148 5.33333 1.99967V4.66634H10C10.3682 4.66634 10.6667 4.96482 10.6667 5.33301C10.6667 5.7012 10.3682 5.99967 10 5.99967H4.66667C4.29848 5.99967 4 5.7012 4 5.33301V1.99967C4 1.63148 4.29848 1.33301 4.66667 1.33301Z" fill="#0F172A"/>
                         </svg>
                     </button>
-                    <button id="use_current_calculation_button">
+                    <button type="button" id="use_current_calculation_button" aria-label="Use current calculation in input field">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M13.1278 3C13.4646 3 13.7497 3.11667 13.983 3.35C14.2163 3.58333 14.333 3.86839 14.333 4.20517L14.333 5.91017L13.333 5.91017L13.333 4.20517C13.333 4.15383 13.3116 4.10683 13.2688 4.06417C13.2262 4.02139 13.1792 4 13.1278 4L2.87151 4C2.82017 4 2.77317 4.02139 2.73051 4.06417C2.68773 4.10683 2.66634 4.15383 2.66634 4.20517L2.66634 11.7948C2.66634 11.8462 2.68773 11.8932 2.73051 11.9358C2.77317 11.9786 2.82017 12 2.87151 12L13.1278 12C13.1792 12 13.2262 11.9786 13.2688 11.9358C13.3116 11.8932 13.333 11.8462 13.333 11.7948L13.333 10.0898L14.333 10.0898L14.333 11.7948C14.333 12.1316 14.2163 12.4167 13.983 12.65C13.7497 12.8833 13.4646 13 13.1278 13L2.87151 13C2.53473 13 2.24967 12.8833 2.01634 12.65C1.78301 12.4167 1.66634 12.1316 1.66634 11.7948L1.66634 4.20517C1.66634 3.86839 1.78301 3.58333 2.01634 3.35C2.24967 3.11667 2.53473 3 2.87151 3L13.1278 3Z" fill="#0F172A"/>
                             <path d="M10.3666 8.4591L11.0896 7.7566L8.44862 5.1156L5.80762 7.7566L6.53062 8.4591L7.94862 7.03093L7.94862 10.8848L8.94862 10.8848L8.94862 7.03093L10.3666 8.4591Z" fill="#0F172A"/>
@@ -100,32 +100,32 @@
                 </div>
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; flex-direction: row;">
-                        <div id="grid-container-numbers">
-                            <div class="grid-item-number" id="clearCurrentCalculationButton">AC</div> 
-                            <div class="grid-item-number" id="deleteButton">DEL</div> 
-                            <div class="grid-item-number" id="decimal">.</div> 
-                            <div class="grid-item-number" id="number1">1</div> 
-                            <div class="grid-item-number" id="number2">2</div> 
-                            <div class="grid-item-number" id="number3">3</div> 
-                            <div class="grid-item-number" id="number4">4</div> 
-                            <div class="grid-item-number" id="number5">5</div> 
-                            <div class="grid-item-number" id="number6">6</div> 
-                            <div class="grid-item-number" id="number7">7</div> 
-                            <div class="grid-item-number" id="number8">8</div> 
-                            <div class="grid-item-number" id="number9">9</div> 
-                            <div class="grid-item-number" id="number0">0</div>
-                            <div class="grid-item-number" id="number00">00</div>
-                             <div class="grid-item-number" id="number000">000</div> 
+                        <div id="grid-container-numbers" role="group" aria-label="Numbers and clear">
+                            <button type="button" class="grid-item-number" id="clearCurrentCalculationButton" aria-label="All clear">AC</button>
+                            <button type="button" class="grid-item-number" id="deleteButton" aria-label="Delete last">DEL</button>
+                            <button type="button" class="grid-item-number" id="decimal" aria-label="Decimal point">.</button>
+                            <button type="button" class="grid-item-number" id="number1">1</button>
+                            <button type="button" class="grid-item-number" id="number2">2</button>
+                            <button type="button" class="grid-item-number" id="number3">3</button>
+                            <button type="button" class="grid-item-number" id="number4">4</button>
+                            <button type="button" class="grid-item-number" id="number5">5</button>
+                            <button type="button" class="grid-item-number" id="number6">6</button>
+                            <button type="button" class="grid-item-number" id="number7">7</button>
+                            <button type="button" class="grid-item-number" id="number8">8</button>
+                            <button type="button" class="grid-item-number" id="number9">9</button>
+                            <button type="button" class="grid-item-number" id="number0">0</button>
+                            <button type="button" class="grid-item-number" id="number00">00</button>
+                            <button type="button" class="grid-item-number" id="number000">000</button>
                         </div>
-                        <div id="grid-container-operator">
-                            <div class="grid-item-operator" id="plusOperator">+</div>
-                            <div class="grid-item-operator" id="minusOperator">-</div>
-                            <div class="grid-item-operator" id="divisionOperator">÷</div>
-                            <div class="grid-item-operator" id="multiplicationOperator">×</div>
+                        <div id="grid-container-operator" role="group" aria-label="Operators">
+                            <button type="button" class="grid-item-operator" id="plusOperator" aria-label="Plus">+</button>
+                            <button type="button" class="grid-item-operator" id="minusOperator" aria-label="Minus">-</button>
+                            <button type="button" class="grid-item-operator" id="divisionOperator" aria-label="Divide">÷</button>
+                            <button type="button" class="grid-item-operator" id="multiplicationOperator" aria-label="Multiply">×</button>
                         </div>
                     </div>
                     <div style="display: flex;">
-                        <div id="equalsTo">=</div>
+                        <button type="button" id="equalsTo" aria-label="Equals">=</button>
                     </div>
                 </div>
             </section>

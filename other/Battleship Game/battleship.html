@@ -19,16 +19,19 @@
 </head>
 
 <body>
-    <heading>Battleship</heading>   
-    <div id="gameRuleContainer">
-      <h6>Game Rules</h6>
+    <main>
+    <h1>Battleship</h1>
+    <section id="gameRuleContainer" aria-labelledby="rulesHeading">
+      <h2 id="rulesHeading">Game Rules</h2>
       <ol>
         <li>Click on the cells to reveal the image hidden behind them.</li>
         <li>There are 5 ships hidden in the game.</li>
         <li>You win if you can find all ships in less than 8 clicks, else you lose.</li>
       </ol>
-    </div>
-    <div id="gridContainer"></div>
-    <button id="resetButton">Reset</button>
+    </section>
+    <div id="gridContainer" role="grid" aria-label="Battleship board"></div>
+    <div id="gameStatus" role="status" aria-live="polite" class="visually-hidden"></div>
+    <button type="button" id="resetButton">Reset</button>
+    </main>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!-- designed with love by Anshul Singh (twitter - @anshulpro) -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
@@ -21,13 +21,14 @@
         <link rel="stylesheet" href="vc.css">
         <script type="module" src="vc.js"></script>
     </head>
-    <body> 
-        <section id="inputBoxSection">
-            <div id="inputBox" contenteditable="false" name="inputBox" rows="4" cols="50" >
+    <body>
+        <main>
+        <section id="inputBoxSection" aria-label="Virtual keyboard output">
+            <div id="inputBox" contenteditable="false" role="textbox" aria-live="polite" aria-label="Typed text output">
             </div>
         </section>
 
-        <section style="align-self: center; margin-top: 0px; margin-bottom: -5px; z-index: 0;">
+        <section aria-hidden="true" style="align-self: center; margin-top: 0px; margin-bottom: -5px; z-index: 0;">
             <svg width="23" height="39" viewBox="0 0 23 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0H23V2C23 2.55228 22.5523 3 22 3H1C0.447715 3 0 2.55228 0 2V0Z" fill="#FFA807"/>
                 <path d="M0 37C0 36.4477 0.447715 36 1 36H22C22.5523 36 23 36.4477 23 37V39H0V37Z" fill="#FFA807"/>
@@ -43,256 +44,256 @@
                 </g>
             </svg>
         </section>
-        
+
         <!-- keyboard-->
-        <section id="keyboardOuterFrame">
+        <section id="keyboardOuterFrame" aria-label="Virtual keyboard">
             <div id="keyboardInnerFrame">
                 <section id="row1">
-                    <div class="key default2" id="backquote">
+                    <button type="button" class="key default2" id="backquote" aria-label="Backtick">
                         <div class="shiftkey">~</div>
                         <div class="mainkey">`</div>
-                    </div>
-                    <div class="key default2" id="1">
+                    </button>
+                    <button type="button" class="key default2" id="1" aria-label="1">
                         <div class="shiftkey">!</div>
                         <div class="mainkey">1</div>
-                    </div>
-                    <div class="key default2" id="2">
+                    </button>
+                    <button type="button" class="key default2" id="2" aria-label="2">
                         <div class="shiftkey">@</div>
                         <div class="mainkey">2</div>
-                    </div>
-                    <div class="key default2" id="3">
+                    </button>
+                    <button type="button" class="key default2" id="3" aria-label="3">
                         <div class="shiftkey">#</div>
                         <div class="mainkey">3</div>
-                    </div>
-                    <div class="key default2" id="4"> 
+                    </button>
+                    <button type="button" class="key default2" id="4" aria-label="4">
                         <div class="shiftkey">$</div>
                         <div class="mainkey">4</div>
-                    </div>
-                    <div class="key default2" id="5">
+                    </button>
+                    <button type="button" class="key default2" id="5" aria-label="5">
                         <div class="shiftkey">%</div>
                         <div class="mainkey">5</div>
-                    </div>
-                    <div class="key default2" id="6">
+                    </button>
+                    <button type="button" class="key default2" id="6" aria-label="6">
                         <div class="shiftkey">^</div>
                         <div class="mainkey">6</div>
-                    </div>
-                    <div class="key default2" id="7">
+                    </button>
+                    <button type="button" class="key default2" id="7" aria-label="7">
                         <div class="shiftkey">&</div>
                         <div class="mainkey">7</div>
-                    </div>
-                    <div class="key default2" id="8">
+                    </button>
+                    <button type="button" class="key default2" id="8" aria-label="8">
                         <div class="shiftkey">*</div>
                         <div class="mainkey">8</div>
-                    </div>
-                    <div class="key default2" id="9">
+                    </button>
+                    <button type="button" class="key default2" id="9" aria-label="9">
                         <div class="shiftkey">(</div>
                         <div class="mainkey">9</div>
-                    </div>
-                    <div class="key default2" id="0">
+                    </button>
+                    <button type="button" class="key default2" id="0" aria-label="0">
                         <div class="shiftkey">)</div>
                         <div class="mainkey">0</div>
-                    </div>
-                    <div class="key default2" id="subtract">
+                    </button>
+                    <button type="button" class="key default2" id="subtract" aria-label="Minus">
                         <div class="shiftkey">_</div>
                         <div class="mainkey">-</div>
-                    </div>
-                    <div class="key default2" id="equal">
+                    </button>
+                    <button type="button" class="key default2" id="equal" aria-label="Equals">
                         <div class="shiftkey">+</div>
                         <div class="mainkey">=</div>
-                    </div>
-                    <div class="key" id="delete">
+                    </button>
+                    <button type="button" class="key" id="delete" aria-label="Delete">
                         <div>delete</div>
-                    </div>
+                    </button>
                 </section>
 
                 <section id="row2">
-                    <div class="key" id="tab">
+                    <button type="button" class="key" id="tab" aria-label="Tab">
                         <div>tab</div>
-                    </div>
-                    <div class="key default" id="Q">
+                    </button>
+                    <button type="button" class="key default" id="Q" aria-label="Q">
                         <div>Q</div>
-                    </div>
-                    <div class="key default" id="W">
+                    </button>
+                    <button type="button" class="key default" id="W" aria-label="W">
                         <div>W</div>
-                    </div>
-                    <div class="key default" id="E">
+                    </button>
+                    <button type="button" class="key default" id="E" aria-label="E">
                         <div>E</div>
-                    </div>
-                    <div class="key default" id="R">
+                    </button>
+                    <button type="button" class="key default" id="R" aria-label="R">
                         <div>R</div>
-                    </div>
-                    <div class="key default" id="T">
+                    </button>
+                    <button type="button" class="key default" id="T" aria-label="T">
                         <div>T</div>
-                    </div>
-                    <div class="key default" id="Y">
+                    </button>
+                    <button type="button" class="key default" id="Y" aria-label="Y">
                         <div>Y</div>
-                    </div>
-                    <div class="key default" id="U">
+                    </button>
+                    <button type="button" class="key default" id="U" aria-label="U">
                         <div>U</div>
-                    </div>
-                    <div class="key default" id="I">
+                    </button>
+                    <button type="button" class="key default" id="I" aria-label="I">
                         <div>I</div>
-                    </div>
-                    <div class="key default" id="O">
+                    </button>
+                    <button type="button" class="key default" id="O" aria-label="O">
                         <div>O</div>
-                    </div>
-                    <div class="key default" id="P">
+                    </button>
+                    <button type="button" class="key default" id="P" aria-label="P">
                         <div>P</div>
-                    </div>
-                    <div class="key default2" id="openingbracket">
+                    </button>
+                    <button type="button" class="key default2" id="openingbracket" aria-label="Open bracket">
                         <div class="shiftkey">{</div>
                         <div class="mainkey">[</div>
-                    </div>
-                    <div class="key default2" id="closingbracket">
+                    </button>
+                    <button type="button" class="key default2" id="closingbracket" aria-label="Close bracket">
                         <div class="shiftkey">}</div>
                         <div class="mainkey">]</div>
-                    </div>
-                    <div class="key default2" id="backslash">
+                    </button>
+                    <button type="button" class="key default2" id="backslash" aria-label="Backslash">
                         <div class="shiftkey">|</div>
                         <div class="mainkey">\</div>
-                    </div>
+                    </button>
                 </section>
 
                 <section id="row3">
-                    <div class="key" id="capslockkey">
+                    <button type="button" class="key" id="capslockkey" aria-label="Caps lock" aria-pressed="false">
                         <div>caps lock</div>
                         <div id="capsLockStatus"></div>
-                    </div>
-                    <div class="key default" id="A">
+                    </button>
+                    <button type="button" class="key default" id="A" aria-label="A">
                         <div>A</div>
-                    </div>
-                    <div class="key default" id="S">
+                    </button>
+                    <button type="button" class="key default" id="S" aria-label="S">
                         <div>S</div>
-                    </div>
-                    <div class="key default" id="D">
+                    </button>
+                    <button type="button" class="key default" id="D" aria-label="D">
                         <div>D</div>
-                    </div>
-                    <div class="key default" id="F">
+                    </button>
+                    <button type="button" class="key default" id="F" aria-label="F">
                         <div>F</div>
-                    </div>
-                    <div class="key default" id="G">
+                    </button>
+                    <button type="button" class="key default" id="G" aria-label="G">
                         <div>G</div>
-                    </div>
-                    <div class="key default" id="H">
+                    </button>
+                    <button type="button" class="key default" id="H" aria-label="H">
                         <div>H</div>
-                    </div>
-                    <div class="key default" id="J">
+                    </button>
+                    <button type="button" class="key default" id="J" aria-label="J">
                         <div>J</div>
-                    </div>
-                    <div class="key default" id="K">
+                    </button>
+                    <button type="button" class="key default" id="K" aria-label="K">
                         <div>K</div>
-                    </div>
-                    <div class="key default" id="L">
+                    </button>
+                    <button type="button" class="key default" id="L" aria-label="L">
                         <div>L</div>
-                    </div>
-                    <div class="key default2" id="semicolon">
+                    </button>
+                    <button type="button" class="key default2" id="semicolon" aria-label="Semicolon">
                         <div class="shiftkey">:</div>
                         <div class="mainkey">;</div>
-                    </div>
-                    <div class="key default2" id="singlequote">
+                    </button>
+                    <button type="button" class="key default2" id="singlequote" aria-label="Single quote">
                         <div class="shiftkey">"</div>
                         <div class="mainkey">'</div>
-                    </div>
-                    <div class="key default" id="returnkey">
+                    </button>
+                    <button type="button" class="key default" id="returnkey" aria-label="Return">
                         <div>return</div>
-                    </div>
+                    </button>
                 </section>
 
                 <section id="row4">
-                    <div class="default key" id="leftshiftkey">
+                    <button type="button" class="default key" id="leftshiftkey" aria-label="Left shift" aria-pressed="false">
                         <div>shift</div>
-                    </div>
-                    <div class="key default" id="Z">
+                    </button>
+                    <button type="button" class="key default" id="Z" aria-label="Z">
                         <div>Z</div>
-                    </div>
-                    <div class="key default" id="X">
+                    </button>
+                    <button type="button" class="key default" id="X" aria-label="X">
                         <div>X</div>
-                    </div>
-                    <div class="key default" id="C">
+                    </button>
+                    <button type="button" class="key default" id="C" aria-label="C">
                         <div>C</div>
-                    </div>
-                    <div class="key default" id="V">
+                    </button>
+                    <button type="button" class="key default" id="V" aria-label="V">
                         <div>V</div>
-                    </div>
-                    <div class="key default" id="B">
+                    </button>
+                    <button type="button" class="key default" id="B" aria-label="B">
                         <div>B</div>
-                    </div>
-                    <div class="key default" id="N">
+                    </button>
+                    <button type="button" class="key default" id="N" aria-label="N">
                         <div>N</div>
-                    </div>
-                    <div class="key default" id="M">
+                    </button>
+                    <button type="button" class="key default" id="M" aria-label="M">
                         <div>M</div>
-                    </div>
-                    <div class="key default2" id="comma">
+                    </button>
+                    <button type="button" class="key default2" id="comma" aria-label="Comma">
                         <div class="shiftkey"><</div>
                         <div class="mainkey">,</div>
-                    </div>
-                    <div class="key default2" id="fullstop">
+                    </button>
+                    <button type="button" class="key default2" id="fullstop" aria-label="Period">
                         <div class="shiftkey">></div>
                         <div class="mainkey">.</div>
-                    </div>
-                    <div class="key default2" id="slash">
+                    </button>
+                    <button type="button" class="key default2" id="slash" aria-label="Slash">
                         <div class="shiftkey">?</div>
                         <div class="mainkey">/</div>
-                    </div>
-                    <div class="default key" id="rightshiftkey">
+                    </button>
+                    <button type="button" class="default key" id="rightshiftkey" aria-label="Right shift" aria-pressed="false">
                         <div>shift</div>
-                    </div>
+                    </button>
                 </section>
 
                 <section id="row5">
-                    <div class="key default">
+                    <button type="button" class="key default" aria-label="Function">
                         <div>fn</div>
-                    </div>
-                    <div class="key default" id="ControlLeft">
+                    </button>
+                    <button type="button" class="key default" id="ControlLeft" aria-label="Control">
                         <div>ctrl</div>
-                    </div>
-                    <div class="key default" id="AltLeft">
+                    </button>
+                    <button type="button" class="key default" id="AltLeft" aria-label="Left alt">
                         <div>alt</div>
-                    </div>
-                    <div class="key default" id="MetaLeft">
+                    </button>
+                    <button type="button" class="key default" id="MetaLeft" aria-label="Left command">
                         <div>cmd</div>
-                    </div>
-                    <div class="key default" id="spacekey">
+                    </button>
+                    <button type="button" class="key default" id="spacekey" aria-label="Space">
                         <div></div>
-                    </div>
-                    <div class="key default" id="MetaRight"> 
+                    </button>
+                    <button type="button" class="key default" id="MetaRight" aria-label="Right command">
                         <div>cmd</div>
-                    </div>
-                    <div class="key default" id="AltRight">
+                    </button>
+                    <button type="button" class="key default" id="AltRight" aria-label="Right alt">
                         <div>alt</div>
-                    </div>
+                    </button>
 
-                    <div class="key default" id="ArrowLeft">
+                    <button type="button" class="key default" id="ArrowLeft" aria-label="Left arrow">
                         <div>
-                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M5.64889 0.530275C5.51389 0.473035 5.35759 0.498235 5.24926 0.595075L0.61963 4.73506C0.543333 4.80328 0.5 4.89922 0.5 5.00002C0.5 5.10082 0.543333 5.19676 0.61963 5.26498L5.24926 9.40496C5.31889 9.46724 5.40889 9.5 5.5 9.5C5.55019 9.5 5.60093 9.4901 5.64889 9.46976C5.78333 9.41234 5.87037 9.28292 5.87037 9.14L5.87037 6.62001L10.1296 6.62001C10.3341 6.62001 10.5 6.45873 10.5 6.26001L10.5 3.74002C10.5 3.5413 10.3341 3.38002 10.1296 3.38002L5.87037 3.38002L5.87037 0.860034C5.87037 0.717115 5.78333 0.587695 5.64889 0.530275Z" fill="#828282"/>
                             </svg>
                         </div>
-                    </div>
+                    </button>
                     <div id="halfkeyset">
-                        <div id="ArrowUp" class="arrowkey">
-                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button type="button" id="ArrowUp" class="arrowkey" aria-label="Up arrow">
+                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M8.96972 5.14889C9.02696 5.01389 9.00176 4.85759 8.90492 4.74926L4.76494 0.119629C4.69672 0.0433331 4.60078 -1.92296e-07 4.49998 -1.96702e-07C4.39918 -2.01108e-07 4.30324 0.0433331 4.23502 0.119629L0.0950392 4.74926C0.0327595 4.81889 -2.14574e-07 4.90889 -2.18557e-07 5C-2.20751e-07 5.05018 0.00989892 5.10093 0.0302389 5.14889C0.0876587 5.28333 0.217079 5.37037 0.359998 5.37037L2.87999 5.37037L2.87999 9.62963C2.87999 9.83407 3.04127 10 3.23999 10L5.75998 10C5.9587 10 6.11998 9.83407 6.11998 9.62963L6.11998 5.37037L8.63997 5.37037C8.78289 5.37037 8.9123 5.28333 8.96972 5.14889Z" fill="#828282"/>
-                            </svg> 
-                        </div>
-                        <div id="ArrowDown" class="arrowkey">
-                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            </svg>
+                        </button>
+                        <button type="button" id="ArrowDown" class="arrowkey" aria-label="Down arrow">
+                            <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M0.0302752 4.85111C-0.0269645 4.98611 -0.00176454 5.14241 0.0950751 5.25074L4.23506 9.88037C4.30328 9.95667 4.39922 10 4.50002 10C4.60082 10 4.69676 9.95667 4.76498 9.88037L8.90496 5.25074C8.96724 5.18111 9 5.09111 9 5C9 4.94981 8.9901 4.89907 8.96976 4.85111C8.91234 4.71667 8.78292 4.62963 8.64 4.62963L6.12001 4.62963L6.12001 0.370371C6.12001 0.165926 5.95873 7.10572e-08 5.76001 6.86875e-08L3.24002 3.86369e-08C3.0413 3.62672e-08 2.88002 0.165926 2.88002 0.370371L2.88002 4.62963L0.360034 4.62963C0.217115 4.62963 0.087695 4.71667 0.0302752 4.85111Z" fill="#828282"/>
                             </svg>
-                        </div>
+                        </button>
                     </div>
-                    <div class="key default" id="ArrowRight">
+                    <button type="button" class="key default" id="ArrowRight" aria-label="Right arrow">
                         <div>
-                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M5.35111 9.46972C5.48611 9.52696 5.64241 9.50176 5.75074 9.40492L10.3804 5.26494C10.4567 5.19672 10.5 5.10078 10.5 4.99998C10.5 4.89918 10.4567 4.80324 10.3804 4.73502L5.75074 0.595039C5.68111 0.532759 5.59111 0.5 5.5 0.5C5.44982 0.5 5.39907 0.509899 5.35111 0.530239C5.21667 0.587658 5.12963 0.717079 5.12963 0.859998L5.12963 3.37999L0.870371 3.37999C0.665927 3.37999 0.500001 3.54127 0.500001 3.73999L0.5 6.25998C0.5 6.4587 0.665926 6.61998 0.870371 6.61998L5.12963 6.61998L5.12963 9.13997C5.12963 9.28288 5.21667 9.4123 5.35111 9.46972Z" fill="#828282"/>
                             </svg>
                         </div>
-                    </div>
+                    </button>
 
                 </section>
             </div>
         </section>
-        
+        </main>
     </body>
 </html>

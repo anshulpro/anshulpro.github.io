@@ -22,15 +22,16 @@
 </head>
 
 <body>
-    <div>
+    <main>
         <h1>Wordle Game</h1>
-        <section id="grid-container">
+        <section id="grid-container" aria-label="Guess board">
         </section>
-        <div class="flex-row">
-            <input type="text" id="input-word" maxlength="5" placeholder="enter a 5 letter word" autofocus>
-            <button type="submit" id="submit-guess">Submit Guess</button>
+        <div class="flex-row" role="group" aria-label="Guess input">
+            <label for="input-word" class="visually-hidden">Enter a 5 letter word</label>
+            <input type="text" id="input-word" maxlength="5" placeholder="enter a 5 letter word" aria-describedby="feedback-message" autocomplete="off">
+            <button type="button" id="submit-guess">Submit Guess</button>
         </div>
-        <p id="feedback-message"></p>
-    </div>
+        <p id="feedback-message" role="status" aria-live="polite"></p>
+    </main>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
@@ -30,8 +30,9 @@
 
     </head>
     <body>
+        <main>
         <section>
-            <button id="go_back_button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <button type="button" id="go_back_button" aria-label="Go back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M20.0005 11H6.83047L9.71047 8.11998C10.1005 7.72998 10.1005 7.09998 9.71047 6.70998C9.32047 6.31998 8.69047 6.31998 8.30047 6.70998L3.71047 11.3C3.32047 11.69 3.32047 12.32 3.71047 12.71L8.30047 17.3C8.69047 17.69 9.32047 17.69 9.71047 17.3C10.1005 16.91 10.1005 16.28 9.71047 15.89L6.83047 13H20.0005C20.5505 13 21.0005 12.55 21.0005 12C21.0005 11.45 20.5505 11 20.0005 11Z" fill="black"/>
                 </svg>
                 Go back</button>
@@ -78,11 +79,11 @@
             <h3>Step 1 : Getting parts</h3>
             <h4>Getting all the components to set the constraints ahead and based on this everything is build around.</h4>
             <ol class="list-decimal" >
-                <li>ESP32 eink Display Driver Board<a class="view-link" href="https://www.waveshare.com/product/displays/e-paper/driver-boards/e-paper-esp32-driver-board.htm" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
-                <li>5.83 inch eInk display (Red/Yellow/Black/White) <a class="view-link" href="https://www.waveshare.com/5.83inch-e-paper-g.htm?sku=32788" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
-                <li>18650 LiPo battery - x1 <a class="view-link" href="https://robu.in/product/18650-battery-holder-development-board-compatible-with-raspberry-pi3b-3b/" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
-                <li>Single 18650 battery board (for charging and 3.3v DC supply to ESP32) <a class="view-link" href="https://robu.in/product/samsung-inr18650-25r-2500mah-li-ion-battery/" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
-                <li>38-Pin ESP32 Expansion Board (for seating EPS32 board and have easy access to all pins for future prototyping) <a class="view-link" href="https://www.amazon.in/dp/B0HLHCS6WT?ref=ppx_yo2ov_dt_b_fed_asin_title" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="external link icon"></span></a></li>
+                <li>ESP32 eink Display Driver Board<a class="view-link" href="https://www.waveshare.com/product/displays/e-paper/driver-boards/e-paper-esp32-driver-board.htm" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span></a></li>
+                <li>5.83 inch eInk display (Red/Yellow/Black/White) <a class="view-link" href="https://www.waveshare.com/5.83inch-e-paper-g.htm?sku=32788" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span></a></li>
+                <li>18650 LiPo battery - x1 <a class="view-link" href="https://robu.in/product/18650-battery-holder-development-board-compatible-with-raspberry-pi3b-3b/" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span></a></li>
+                <li>Single 18650 battery board (for charging and 3.3v DC supply to ESP32) <a class="view-link" href="https://robu.in/product/samsung-inr18650-25r-2500mah-li-ion-battery/" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span></a></li>
+                <li>38-Pin ESP32 Expansion Board (for seating EPS32 board and have easy access to all pins for future prototyping) <a class="view-link" href="https://www.amazon.in/dp/B0HLHCS6WT?ref=ppx_yo2ov_dt_b_fed_asin_title" target="_blank" rel="noopener noreferrer">View part<span><img class="link-icon" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span></a></li>
             </ol>
         </section>
 
@@ -149,16 +150,16 @@
             </ol>
         </section>
 
-        <div class="carousel">
-            <div class="carousel-track" id="assembly-track">
-                <img src="internal_1.jpg" alt="Internal assembly view 1" loading="lazy">
-                <img src="internal_2.jpg" alt="Internal assembly view 2" loading="lazy">
+        <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Internal assembly views">
+            <div class="carousel-track" id="assembly-track" aria-live="polite">
+                <img src="internal_1.jpg" alt="Internal assembly view 1" aria-roledescription="slide" loading="lazy">
+                <img src="internal_2.jpg" alt="Internal assembly view 2" aria-roledescription="slide" loading="lazy">
             </div>
-            <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <button type="button" class="carousel-arrow carousel-arrow-prev" aria-label="Previous slide">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
-            <button class="carousel-arrow carousel-arrow-next" aria-label="Next">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <button type="button" class="carousel-arrow carousel-arrow-next" aria-label="Next slide">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
         </div>
 
@@ -191,11 +192,11 @@
         <div class="code-block" id="code-viewer">
             <div class="code-block-header">
                 <div class="code-tab">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3d8af7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3d8af7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                     <span class="code-block-label">make_calendar_fonts.py</span>
                 </div>
-                <button class="code-copy-btn" id="copy-btn">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <button type="button" class="code-copy-btn" id="copy-btn" aria-label="Copy make_calendar_fonts.py to clipboard" aria-live="polite">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                     Copy
                 </button>
             </div>
@@ -220,11 +221,11 @@
         <div class="code-block" id="code-viewer-ino">
             <div class="code-block-header">
                 <div class="code-tab">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3d8af7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3d8af7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                     <span class="code-block-label">Calendar.ino</span>
                 </div>
-                <button class="code-copy-btn" id="copy-btn-ino">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <button type="button" class="code-copy-btn" id="copy-btn-ino" aria-label="Copy Calendar.ino to clipboard" aria-live="polite">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                     Copy
                 </button>
             </div>
@@ -250,6 +251,6 @@
                 <li>More experimentation on the UI - adding SVG icons, small images, fancy borders...</li>
             </ul>
         </section>
-
+        </main>
     </body>
 </html>

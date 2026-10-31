@@ -2,7 +2,7 @@
 <!--if you find any error in the code, or something odd...do ping me at anshulpro@gmail.com-->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://covers.openlibrary.org https://archive.org https://*.archive.org; object-src 'none'; base-uri 'self'; form-action 'self'">
@@ -29,11 +29,12 @@
         <script defer src="logic.js"></script>
     </head>
    
-    <body class="disable-select flex flex-col"> 
+    <body class="flex flex-col">
+        <main class="flex flex-col">
         <!--Introduction-->
-        <section class="flex flex-row p-3 font-normal font-text mt-4 max-w-xl mx-5 self-center">
+        <header class="flex flex-row p-3 font-normal font-text mt-4 max-w-xl mx-5 self-center">
             <div class="flex-none mt-4">
-                <img class="rounded-sm" style="height: 130px" src="assets/profile_pic.png">
+                <img class="rounded-sm" style="height: 130px" src="assets/profile_pic.png" alt="Portrait of Anshul Singh">
             </div>
             <div class="flex flex-col ml-4 leading-none" style="position: relative;">
                 <div id="hello_container">
@@ -49,35 +50,34 @@
                 
                 
                 <div class="flex flex-row items-center mt-2 ml-4">
-                    <!-- <a title="Twitter" target="_blank" rel="noopener noreferrer" class="button_twitter mr-2" href="https://twitter.com/anshulpro"><img class="h-4 w-4" src="assets/twitter.svg"></a> -->
-                    <a title="Linkedin" target="_blank" rel="noopener noreferrer" class="button_linkedin mr-2" href="https://www.linkedin.com/in/anshulpro/"><img class="h-4 w-4" src="assets/linkedin.svg"></a>
-                    <a title="Github" target="_blank" rel="noopener noreferrer" class="button_github mr-2" href="https://github.com/anshulpro"><img class="h-4 w-4" src="assets/github.svg"></a>
-                    <a title="View my latest Resume" target="_blank" rel="noopener noreferrer" class="button_resume hover:bg-gray-200" href="./documents/Anshul_Singh_DD.pdf">
+                    <a aria-label="LinkedIn profile (opens in new tab)" target="_blank" rel="noopener noreferrer" class="button_linkedin mr-2" href="https://www.linkedin.com/in/anshulpro/"><img class="h-4 w-4" src="assets/linkedin.svg" alt=""></a>
+                    <a aria-label="GitHub profile (opens in new tab)" target="_blank" rel="noopener noreferrer" class="button_github mr-2" href="https://github.com/anshulpro"><img class="h-4 w-4" src="assets/github.svg" alt=""></a>
+                    <a aria-label="View my latest resume (opens in new tab)" target="_blank" rel="noopener noreferrer" class="button_resume hover:bg-gray-200" href="./documents/Anshul_Singh_DD.pdf">
                         <div class="font_inter text-xs text-blue-500"><b>Resume</b></div>
-                        <img class="h-3 w-3 ml-1" src="assets/icon_external_link.svg">
+                        <img class="h-3 w-3 ml-1" src="assets/icon_external_link.svg" alt="" aria-hidden="true">
                     </a>
                 </div>
             </div>
-        </section>
+        </header>
         
         <!--Navigation switch-->
-        <div id="nav_parent">
-            <div id="work_tab" title="What I do on weekdays" class="tab_active">
-                <img src="/images/badge_24px.png">
+        <nav id="nav_parent" role="tablist" aria-label="Content category">
+            <button type="button" id="work_tab" role="tab" aria-selected="true" aria-controls="work_container" title="What I do on weekdays" class="tab_active">
+                <img src="/images/badge_24px.png" alt="" aria-hidden="true">
                 Work
-            </div>
-            <div id="afterwork_tab" title="What I do post work and on weekends" class="tab_inactive">
-                <img src="/images/toy_train_24px.png">
+            </button>
+            <button type="button" id="afterwork_tab" role="tab" aria-selected="false" aria-controls="afterwork_container" title="What I do post work and on weekends" class="tab_inactive">
+                <img src="/images/toy_train_24px.png" alt="" aria-hidden="true">
                 After Work
-            </div>
-        </div>
+            </button>
+        </nav>
 
         <!--separator--> 
         <!-- <div class="h-px bg-gray-200"></div> -->
         
         
         <!--Work File-->
-        <div id="work_container" class="flex flex-col items-center">
+        <div id="work_container" role="tabpanel" aria-labelledby="work_tab" class="flex flex-col items-center">
 
             <!-- tDS card -->            
             <a id="tds_card" 
@@ -152,24 +152,24 @@
                 <div id="old_work_container" class="text-gray-700">
                     <ul class="list-disc ml-4">
                         <li class="mb-2"><div class="font-semibold">Service request tracker - Mobile app <a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="/documents/Water Purifier - Anshul Singh.pdf">
-                            View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
+                            View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span>
                             </a>
                             </div>Water purifier owners can manage (raise, track, close) service requests; also cross-selling other products manufactured by the company - Demo Work (~ 2 days) 
                         </li> 
                         <li class="mb-2"><div class="font-semibold">Technician - A day at work <a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="/documents/A Day at Work - Technician.pdf">
-                            View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
+                            View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span>
                             </a>
                             </div>One of the user journey for a Technician that shows how his typical day might look like. He manages all his work (the work orders assigned to him) via a digital tablet. 
                         </li> 
                         <li class="mb-2"><div class="font-semibold">Email Template - Pre & Post Health Check <a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="https://htmlpreview.github.io/?https://github.com/anshulpro/Health-Check-Template/blob/master/html_mailer_health_check_2.html">
-                            View Prototype<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
+                            View Prototype<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span>
                             </a><a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="https://www.figma.com/file/MGdmxMxaJiwRLvHV2NPERJhq/Book-Appointment-Mailer?node-id=0%3A1">
-                            View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
+                            View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span>
                             </a>
                             </div>These email template were used by the backend developer; code triggers these emails along with notifications to users based on Health Check stages.
                         </li> 
                         <li class="mb-2"><div class="font-semibold">Assign Crew Members to a Work Order - Web app | Dekstop <a target="_blank" rel="noopener noreferrer" class="text-blue-500 pl-2" href="/documents/Assign%20Crew%20Members%20to%20WO%20-%20Anshul%20Singh.pdf">
-                            View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="external link icon"></span>
+                            View Design<span><img class="h-3 w-3 inline-flex ml-1" src="/assets/icon_external_link.svg" alt="" aria-hidden="true"></span>
                             </a>
                             </div>A Supervisor assigns a technician for each operation in a Work Order that is already created. Before proposing such a design it was done from the default SAP application (the backend). Design aimed to improve supervisor productivity, reduce error in assignment and easy to use. 
                         </li> 
@@ -179,7 +179,7 @@
         </div>
         
         <!--after work-->
-        <div id="afterwork_container" style="display: none;" class="flex-col items-center content-center mx-5 font_inter text-gray-800 mb-8">
+        <div id="afterwork_container" role="tabpanel" aria-labelledby="afterwork_tab" style="display: none;" class="flex-col items-center content-center mx-5 font_inter text-gray-800 mb-8">
             
             <!--Other random Stuff-->
             <div class="mx-3 card_800 text-gray-900 text-sm font-bold mt-2 -mb-2">Apps</div>
@@ -238,14 +238,14 @@
                 <div class="text-gray-900 text-sm font-bold mt-4 pl-4">Books
                     <div class="text-xs text-gray-800 mb-2 font-normal">Few of the books that I have read and I really like them</div>
                 </div>
-                <div id="books-wrapper">
+                <div id="books-wrapper" tabindex="0" role="region" aria-label="Books I have read; use arrow keys to scroll">
                 </div>
             </div>
 
             <!--Gaming-->
             <div class="mx-3 bg-gray-100 p-5 rounded my-2 card_800">
                 <div class="text-gray-900 text-sm font-bold mb-1">Gaming
-                    <img class="mb-2 mt-2" src="/images/games_desktop.jpg">
+                    <img class="mb-2 mt-2" src="/images/games_desktop.jpg" alt="Collage of game cover art">
                     <ul class="list-disc ml-4 text-xs text-gray-800 font-normal">
                         <li><em>Horizon Zero Dawn</em> - Brilliant Graphics, beautiful story that combines everthying (Man + machine + AI + Earth)</li>
                         <li><em>Detroit : Become Human </em> - A short but interactive game werein your actions drive the story forward. Good storyline, user interface is too good to ignore, esp. when you rebuild a scenario from a crime scene. </li>
@@ -260,7 +260,7 @@
                 <div class="text-gray-900 text-sm font-bold mb-1">3D Printing
                     <div class="text-xs text-gray-800 mb-2 font-normal">Recently added a 3D Printer and started tinkering around it to print anything...</div>
                 </div>
-                <img class="mt-2 mb-2" src="/images/3d_printer.jpg">
+                <img class="mt-2 mb-2" src="/images/3d_printer.jpg" alt="My Bambu Lab A1 3D printer">
             </div>
             
             <!--Sports-->
@@ -273,6 +273,7 @@
                 </div>
             </div>
         </div>
-       
+        </main>
+
     </body>
 </html>

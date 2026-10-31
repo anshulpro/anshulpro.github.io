@@ -29,6 +29,16 @@ body{
     border-collapse: collapse;
     user-select: none;
 }
+
+:focus-visible {
+    outline: 2px solid var(--primary_blue);
+    outline-offset: 2px;
+}
+
+.grid-item-number, .grid-item-operator, #equalsTo {
+    font-family: inherit;
+    appearance: none;
+}
 h1{
     font-family: sans-serif;
     text-align: center;
@@ -196,7 +206,6 @@ p{
 }
 .three_dot_icon_button{
     cursor: pointer;
-    outline: none;
     border: none;
     background-color: transparent;
     display: flex;
@@ -334,9 +343,6 @@ p{
 #use_current_calculation_button:active{
     opacity: 0.8;
     animation: pressMoveTop 0.25s cubic-bezier(.5,1.6,.4,1.03);
-}
-#save_current_calculation_button:focus, #use_current_calculation_button:focus{
-    outline: none;
 }
 #use_current_calculation_button{
     position: absolute;

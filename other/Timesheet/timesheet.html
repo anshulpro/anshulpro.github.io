@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'">
@@ -24,10 +24,11 @@
 
     </head>
     <body>
+        <main>
         <section>
-            <button id="go_back_button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <button type="button" id="go_back_button" aria-label="Go back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M20.0005 11H6.83047L9.71047 8.11998C10.1005 7.72998 10.1005 7.09998 9.71047 6.70998C9.32047 6.31998 8.69047 6.31998 8.30047 6.70998L3.71047 11.3C3.32047 11.69 3.32047 12.32 3.71047 12.71L8.30047 17.3C8.69047 17.69 9.32047 17.69 9.71047 17.3C10.1005 16.91 10.1005 16.28 9.71047 15.89L6.83047 13H20.0005C20.5505 13 21.0005 12.55 21.0005 12C21.0005 11.45 20.5505 11 20.0005 11Z" fill="black"/>
-                </svg> 
+                </svg>
                 Go back</button>
             <h1>Timesheet</h1>
             <h2>at Keka HR, 2022 as Senior Designer on Mobile app team</h2>
@@ -61,7 +62,6 @@
                 src="research_ts.jpg"
                 alt="A small snippet on the FigJam file which was used by both of us (PM, me) to sync up before moving to any solution"
                 loading="lazy"
-                aria-hidden={false}
             />
             <figcaption>
                 A small snippet on the FigJam file which was used by both of us (PM & me) to sync up before moving to solution
@@ -78,7 +78,6 @@
                 src="prototype_ts_mobile_UI.jpg"
                 alt="Figma prototype first UI screen that was sent internally to collect Feedback"
                 loading="lazy"
-                aria-hidden={false}
                 style="width: 309px"
             />
             <figcaption>
@@ -91,12 +90,11 @@
                 src="final_design_ts.jpg"
                 alt="Figma prototype first UI screen that was sent internally to collect Feedback"
                 loading="lazy"
-                aria-hidden={false}
             />
             <figcaption>
                 Final Designs for Phase 1 fof Timesheet on Figma; the Timesheet widget is where the timesheet access starts on Keka mobile app (enabled for specific employees by admin)
             </figcaption>
         </figure>
-
+        </main>
     </body>
 </html>

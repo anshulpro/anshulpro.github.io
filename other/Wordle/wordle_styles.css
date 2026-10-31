@@ -7,10 +7,25 @@ body{
     align-items: center;
     border-collapse: collapse;
 }
+:focus-visible {
+    outline: 2px solid #6a0dad;
+    outline-offset: 2px;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
 h1{
     font-family: "gf_EB_Garamond";
 }
-body > div {
+body > main {
     background-color: white;
     border: 1px solid lightgrey;
     border-radius: 4px;

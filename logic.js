@@ -14,15 +14,19 @@ const afterworkContainer = document.getElementById('afterwork_container');
 function activateWorkTab() {
     workContainer.style.display = 'flex';
     workTab.className = 'tab_active';
+    workTab.setAttribute('aria-selected', 'true');
     afterworkContainer.style.display = 'none';
     afterworkTab.className = 'tab_inactive';
+    afterworkTab.setAttribute('aria-selected', 'false');
 }
 
 function activateAfterworkTab() {
     afterworkContainer.style.display = 'flex';
     afterworkTab.className = 'tab_active';
+    afterworkTab.setAttribute('aria-selected', 'true');
     workContainer.style.display = 'none';
     workTab.className = 'tab_inactive';
+    workTab.setAttribute('aria-selected', 'false');
 }
 
 workTab.addEventListener('click', activateWorkTab);
